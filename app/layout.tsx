@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
 import { roboto } from "./assets/fonts";
+import Header from "./components/Header/Header";
 
 export const metadata: Metadata = {
    title: "Home",
@@ -15,6 +16,7 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={roboto.className}>
+            <Header />
             {children}
          </body>
       </html>

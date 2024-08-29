@@ -1,0 +1,23 @@
+@import '/app/styles/variables.scss';
+
+.header {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   padding: 16px 0;
+   background-color: $background;
+}
+
+.header_container {
+   max-width: 1264px;
+   height: 70px;
+   width: 100%;
+   padding: 0 24px;
+   margin: 0 16px;
+   border: 1px solid;
+   border-color: rgba($color: $dark, $alpha: 0.24);
+   border-radius: 24px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
