@@ -6,3 +6,19 @@ $primaryOrange: #F29C33;
 $primaryRed: #EE6352;
 $primaryLightBlue: #C4E5FC;
 $light: #FFFBF2;
+
+@mixin subscribe-button {
+   width: 122px;
+   height: 38px;
+   border: none;
+   outline: none;
+   border-radius: 24px;
+   background-color: $dark;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: $light;
+   text-transform: uppercase;
+   font-weight: 500;
+   cursor: pointer;
+}
