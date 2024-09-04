@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import '../Header/header.scss'
-import { MagnifyingGlassIcon } from '@heroicons/react/16/solid'
+import { Bars3BottomLeftIcon, Bars3Icon, MagnifyingGlassIcon } from '@heroicons/react/16/solid'
 
 export default function Header() {
    return (
@@ -13,6 +13,7 @@ export default function Header() {
                      height={35}
                      alt='nav_logo'
                      src='/nav-logo.svg'
+                     priority
                   />
                </div>
                <ul className='nav_links'>
@@ -29,6 +30,9 @@ export default function Header() {
                      Subscribe
                   </button>
                </div>
+               <button className='menu-hamburger-button'>
+                  <Bars3Icon />
+               </button>
             </nav>
          </div>
       </header>

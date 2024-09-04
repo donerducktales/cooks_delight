@@ -71,3 +71,26 @@
    align-items: center;
    cursor: pointer;
 }
+
+.menu-hamburger-button {
+   display: none;
+}
+
+@media (max-width: 800px) {
+   .nav_links, .nav_buttons {
+      display: none;
+   }
+
+   .menu-hamburger-button {
+      width: 37px;
+      height: 37px;
+      border: none;
+      outline: none;
+      border-radius: 16px;
+      background-color: rgba($color: $dark, $alpha: 0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+   }
+}
