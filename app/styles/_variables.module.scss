@@ -1,10 +1,10 @@
 // colors
 $background: #F0EBE1;
 $dark: #262522;
-$primaryGreen: #9FDC26;
-$primaryOrange: #F29C33;
-$primaryRed: #EE6352;
-$primaryLightBlue: #C4E5FC;
+$primary-green: #9FDC26;
+$primary-orange: #F29C33;
+$primary-red: #EE6352;
+$primary-light-blue: #C4E5FC;
 $light: #FFFBF2;
 
 @mixin subscribe-button {
@@ -21,4 +21,8 @@ $light: #FFFBF2;
    text-transform: uppercase;
    font-weight: 500;
    cursor: pointer;
+}
+
+:export {
+   primaryOrange: $primary-orange;
 }

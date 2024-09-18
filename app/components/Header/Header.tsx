@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import '../Header/header.scss'
-import { Bars3BottomLeftIcon, Bars3Icon, MagnifyingGlassIcon } from '@heroicons/react/16/solid'
+import { MagnifyingGlassIcon } from '@heroicons/react/16/solid'
+import MenuMobile from './MenuMobile/MenuHamburgerButton'
 
 export default function Header() {
    return (
@@ -30,9 +31,7 @@ export default function Header() {
                      Subscribe
                   </button>
                </div>
-               <button className='menu-hamburger-button'>
-                  <Bars3Icon />
-               </button>
+               <MenuMobile />
             </nav>
          </div>
       </header>
