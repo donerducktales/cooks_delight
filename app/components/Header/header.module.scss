@@ -55,11 +55,11 @@
    gap: 16px;
 }
 
-.subscribe-button {
+.subscribeButton {
    @include subscribe-button;
 }
 
-.search-button {
+.searchButton {
    width: 37px;
    height: 37px;
    border: none;
@@ -72,7 +72,7 @@
    cursor: pointer;
 }
 
-.menu-hamburger-button {
+.menuHamburgerButton {
    display: none;
 }
 
@@ -81,7 +81,7 @@
       display: none;
    }
 
-   .menu-hamburger-button {
+   .menuHamburgerButton {
       width: 37px;
       height: 37px;
       border: none;
