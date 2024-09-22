@@ -6,6 +6,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
 import variables from '@/app/styles/_variables.module.scss';
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
+import MenuMobile from './MenuMobile/MenuMobile';
 
 export default function Header() {
    const [open, setOpen] = useState<boolean>(false);
@@ -18,9 +19,9 @@ export default function Header() {
 
    return (
       <header className={styles.header} style={toDark('rgb(38, 37, 34, 0.9)')}>
-         <div className={styles.header_container} style={toDark(variables.dark)}>
+         <div className={styles.headerContainer} style={toDark(variables.dark)}>
             <nav className={styles.nav}>
-               <div className={styles.nav_logo}>
+               <div className={styles.navLogo}>
                   <Image 
                      width={180}
                      height={35}
@@ -29,13 +30,13 @@ export default function Header() {
                      priority
                   />
                </div>
-               <ul className={styles.nav_links}>
+               <ul className={styles.navLinks}>
                   <li>Home</li>
                   <li>Recipes</li>
                   <li>Cooking tips</li>
                   <li>About Us</li>
                </ul>
-               <div className={styles.nav_buttons}>
+               <div className={styles.navButtons}>
                   <button className={styles.searchButton}>
                      <MagnifyingGlassIcon />
                   </button>
@@ -51,6 +52,7 @@ export default function Header() {
                   {open ? <XMarkIcon color={variables.primaryOrange} /> : <Bars3Icon />}
                </button>
             </nav>
+            {open && <MenuMobile />}
          </div>
       </header>
    )

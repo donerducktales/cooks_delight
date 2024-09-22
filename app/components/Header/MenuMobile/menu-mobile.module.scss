@@ -1,0 +1,14 @@
+.menuMobile {
+   display: none;
+}
+
+@media (max-width: 800px) {
+   .menuMobile {
+      display: flex;
+      position: absolute;
+      top: 70px;
+      background-color: rgb(38, 37, 34, 0.9);
+      width: 100%;
+      
+   }
+}
