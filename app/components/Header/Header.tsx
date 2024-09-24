@@ -7,6 +7,14 @@ import { useState } from 'react';
 import variables from '@/app/styles/_variables.module.scss';
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import MenuMobile from './MenuMobile/MenuMobile';
+import styled from 'styled-components';
+
+const HeaderContainer: any = styled.div<{ open?: boolean }>`
+   @media (max-width: 800px) {
+      background-color: ${({ open }) => open && variables.dark};
+      border-radius: ${({ open }) => open && '24px 24px 0 0'};
+   }
+`;
 
 export default function Header() {
    const [open, setOpen] = useState<boolean>(false);
@@ -19,7 +27,10 @@ export default function Header() {
 
    return (
       <header className={styles.header} style={toDark('rgb(38, 37, 34, 0.9)')}>
-         <div className={styles.headerContainer} style={toDark(variables.dark)}>
+         <HeaderContainer 
+            open={open}
+            className={styles.headerContainer} 
+         >
             <nav className={styles.nav}>
                <div className={styles.navLogo}>
                   <Image 
@@ -53,7 +64,7 @@ export default function Header() {
                </button>
             </nav>
             {open && <MenuMobile />}
-         </div>
+         </HeaderContainer>
       </header>
    )
 }
