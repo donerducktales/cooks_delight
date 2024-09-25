@@ -31,6 +31,20 @@
    justify-content: space-between;
 }
 
+.navLogo {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 8px;
+   color: $dark;
+   font-size: 0.875rem;
+}
+
+.navLogoText {
+   width: 50px;
+   font-weight: bold;
+}
+
 .navLinks {
    display: flex;
    flex-direction: row;
