@@ -80,7 +80,7 @@ export default function Header() {
                <button 
                   className={styles.menuHamburgerButton}
                   onClick={() => setOpen(!open)}
-                  style={toDark('rgba(255, 251, 242, 0.26)')}
+                  style={toDark(scssvariables.light + '16')}
                >
                   {open ? <XMarkIcon color={scssvariables.primaryOrange} /> : <Bars3Icon />}
                </button>
