@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import scssvariables from '@/app/styles/_variables.module.scss';
 import { montserrat, roboto } from '@/app/assets/fonts';
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const StyledMenuMobile = styled.div<{open?: boolean}>`
    display: none;
@@ -47,6 +49,7 @@ const StyledMenuMobile = styled.div<{open?: boolean}>`
                margin-bottom: 10px;
             }
          }
+
          .mobile-nav_buttons {
             display: flex;
             gap: 16px;
@@ -82,6 +85,20 @@ const StyledMenuMobile = styled.div<{open?: boolean}>`
             }
          }
       }
+
+      .social-media-links {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-top: 40px;
+         gap: 16px;
+         cursor: pointer;
+
+         a {
+            display: flex;
+            align-items: center;
+         }
+      }
    }
 `;
 
@@ -106,6 +123,31 @@ export default function MenuMobile({open}: {open: boolean}) {
                <button className={`${roboto.className} subscribe-button`}>
                   Subscribe
                </button>
+            </div>
+            <div className='social-media-links'>
+               <Image 
+                  src={'/facebook-logo.png'}
+                  alt='facebook-logo'
+                  width={18}
+                  height={18}
+                  quality={'100'}
+               />
+               <Image 
+                  src={'/insta-logo.png'}
+                  alt='instagram-logo'
+                  width={18}
+                  height={18}
+                  quality={100}
+               />
+               <Link href={'https://www.youtube.com'}>
+                  <Image 
+                     src={'/yt-logo.png'}
+                     alt='youtube-logo'
+                     width={20}
+                     height={16}
+                     quality={100}
+                  />
+               </Link>
             </div>
          </nav>
       </StyledMenuMobile>
