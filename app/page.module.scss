@@ -6,5 +6,73 @@
    justify-content: space-between;
    align-items: center;
    min-height: 100vh;
+   width: 100%;
    background-color: $background;
+}
+
+.mainContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   max-width: 1312px;
+   width: calc(100% - 32px);
+}
+
+.heroSection {
+   display: flex;
+   width: 100%;
+   height: 577px;
+   border-radius: 32px;
+   justify-content: center;
+   align-items: center;
+   background-image: url('/Home/HeroSection/hero-section-background.png');
+}
+
+.heroTextWrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   h1 {
+      max-width: 880px;
+      text-transform: uppercase;
+      color: $background;
+      font-size: 5rem;
+      text-align: center;
+      font-weight: 800;
+      margin: 0 16px 16px 16px;
+   }
+
+   p {
+      max-width: 410px;
+      color: $background;
+      font-size: 1.313rem;
+      text-align: center;
+      font-weight: 300;
+      line-height: 1.6rem;
+      margin: 0 16px 40px 16px;
+   }
+
+   button {
+      @include subscribe-button;
+      width: 166px;
+      background-color: $primary-orange;
+      color: $dark;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+   }
+}
+
+@media (max-width: 650px) {
+   .heroTextWrapper {
+      h1 {
+         font-size: 2.375rem;
+      }
+
+      p {
+         font-size: 1rem;
+      }
+   }
 }

@@ -9,10 +9,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import MenuMobile from './MenuMobile/MenuMobile';
 import styled from 'styled-components';
 
-// const HeaderStyled = styled.header<{open?: boolean}>`
-
-// `;
-
 const HeaderContainer = styled.div<{ open?: boolean }>`
    @media (max-width: 800px) {
       background-color: ${({ open }) => open && `rgba(255, 251, 242, 0.05)`};
@@ -52,7 +48,7 @@ export default function Header() {
                      width={40}
                      height={35}
                      alt='nav_logo'
-                     src='/nav-logo.svg'
+                     src='/Header/nav-logo.svg'
                      priority
                      quality={100}
                   />

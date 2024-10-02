@@ -126,14 +126,14 @@ export default function MenuMobile({open}: {open: boolean}) {
             </div>
             <div className='social-media-links'>
                <Image 
-                  src={'/facebook-logo.png'}
+                  src={'/Header/facebook-logo.png'}
                   alt='facebook-logo'
                   width={18}
                   height={18}
                   quality={'100'}
                />
                <Image 
-                  src={'/insta-logo.png'}
+                  src={'/Header/insta-logo.png'}
                   alt='instagram-logo'
                   width={18}
                   height={18}
@@ -141,7 +141,7 @@ export default function MenuMobile({open}: {open: boolean}) {
                />
                <Link href={'https://www.youtube.com'}>
                   <Image 
-                     src={'/yt-logo.png'}
+                     src={'/Header/yt-logo.png'}
                      alt='youtube-logo'
                      width={20}
                      height={16}

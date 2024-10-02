@@ -7,5 +7,5 @@ export const roboto = Roboto({
 
 export const montserrat = Montserrat({
    subsets: ['latin'],
-   weight: ['600', '700']
+   weight: ['600', '700', '800']
 })
