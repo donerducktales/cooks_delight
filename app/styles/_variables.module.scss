@@ -23,9 +23,24 @@ $light: #FFFBF2;
    cursor: pointer;
 }
 
+@mixin tag {
+   width: 76px;
+   height: 24px;
+   border-radius: 12px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 0.875rem;
+   text-transform: uppercase;
+   font-weight: 500;
+}
+
 :export {
    primaryOrange: $primary-orange;
    dark: $dark;
    background: $background;
    light: $light;
+   primaryLightBlue: $primary-light-blue;
+   primaryRed: $primary-red;
+   primaryGreen: $primary-green;
 }

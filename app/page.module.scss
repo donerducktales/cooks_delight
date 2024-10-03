@@ -26,6 +26,7 @@
    justify-content: center;
    align-items: center;
    background-image: url('/Home/HeroSection/hero-section-background.png');
+   margin-bottom: 16px;
 }
 
 .heroTextWrapper {
@@ -62,6 +63,114 @@
       font-size: 0.875rem;
       font-weight: 500;
       text-transform: uppercase;
+   }
+}
+
+.exploreSection {
+   display: flex;
+   width: 100%;
+   border-radius: 32px;
+   justify-content: center;
+   align-items: center;
+   background-color: $primary-light-blue;
+   margin-bottom: 16px;
+}
+
+.exploreSectionWrapper {
+   padding: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   flex: 1 1 50%;
+   gap: 40px;
+}
+
+.exploreFilterText {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   width: 50%;
+
+   h1 {
+      max-width: 400px;
+      color: $dark;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+   }
+
+   p {
+      font-size: 1rem;
+      color: $dark;
+      opacity: 0.8;
+      max-width: 494px;
+      line-height: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+   }
+
+   button {
+      @include subscribe-button;
+      width: 115px;
+      background-color: $primary-light-blue;
+      color: $dark;
+      border: 1px solid $dark;
+   }
+}
+
+.exploreFilterTextTag {
+   @include tag;
+   background-color: $primary-red;
+   margin-bottom: 16px;
+}
+
+.exploreFilter {
+   width: 50%;
+}
+
+.exploreFilterTable {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   gap: 16px;
+}
+
+.exploreFilterTableItem {
+   height: 72px;
+   width: 100%;
+   border-bottom: 1px solid rgba($color: $dark, $alpha: 0.16);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   p {
+      font-size: 1.125rem;
+      color: $dark;
+      text-transform: uppercase;
+      font-weight: 600;
+   }
+}
+
+@media (max-width: 768px) {
+   .exploreSectionWrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1 1 100%;
+   }
+
+   .exploreFilterText, .exploreFilter {
+      width: 100%;
+   }
+
+   .exploreFilterText {
+      h1 {
+         font-size: 1.625rem;
+      }
+
+      p {
+         font-size: 0.875rem;
+      }
    }
 }
 
