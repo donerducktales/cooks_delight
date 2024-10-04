@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { montserrat, roboto } from "./assets/fonts";
 import styles from "./page.module.scss";
+import FeaturedSection from "./components/FeaturedSection/FeaturedSection";
 
 export default function Home() {
    return (
@@ -87,6 +88,7 @@ export default function Home() {
                   </div>
                </div>
             </section>
+            <FeaturedSection />
          </div>
       </main>
    );
