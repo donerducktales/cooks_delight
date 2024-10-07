@@ -16,13 +16,22 @@
    width: 100%;
 }
 
+.emblaViewport {
+   margin: 0 16px;
+}
+
+.emblaSlide {
+   flex: 0 0 50%;
+}
+
 .carouselNavigation {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
    margin-bottom: 16px;
    margin-top: 26px;
-   margin-right: 4px;
+   margin-right: 16px;
+   margin-left: 16px;
 
    h1 {
       font-size: 2.5rem;
@@ -52,13 +61,29 @@
 
 .recipeCard {
    max-width: 632px;
-   height: 437px;
+   min-height: 437px;
    background-color: $light;
    display: flex;
    flex-direction: column;
    align-items: flex-start;
    border-radius: 32px;
    margin: 8px;
+
+   .recipeCardTitle {
+      font-size: 1.5rem;
+      color: $dark;
+      font-weight: 700;
+      margin: 24px 24px 12px 24px;
+   }
+
+   .recipeCardText {
+      font-size: 1rem;
+      font-weight: 300;
+      color: $dark;
+      margin: 0 24px;
+      margin-bottom: 40px;
+      line-height: 1.4rem;
+   }
 }
 
 .recipeCardImg {
@@ -67,4 +92,36 @@
    max-height: 234px;
    width: 100%;
    aspect-ratio: 70/45;
+}
+
+.recipeInfoWrapper {
+   width: calc(100% - 48px);
+   margin: 0 24px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.recipeInfoWrapperText {
+   width: 50%;
+   font-size: 0.75rem;
+   color: $dark;
+   font-weight: 500;
+}
+
+.recipeInfoWrapperButton {
+   display: flex;
+   width: 50%;
+   justify-content: flex-end;
+
+   button {
+      @include subscribe-button;
+      background-color: $light;
+      color: $dark;
+      border: 1px solid $dark;
+      width: 132px;
+      font-size: 0.875rem;
+      font-weight: 500;
+   }
 }

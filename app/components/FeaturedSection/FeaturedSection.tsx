@@ -8,7 +8,7 @@ import Image from "next/image";
 import styles from '@/app/components/FeaturedSection/featured-section.module.scss';
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import { montserrat } from "@/app/assets/fonts";
+import { montserrat, roboto } from "@/app/assets/fonts";
 
 // const FeaturedSectionStyled = styled.section`
 //    display: flex;
@@ -48,7 +48,7 @@ import { montserrat } from "@/app/assets/fonts";
 // `
 
 export default function FeaturedSection() {
-   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false })
+   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
 
    useEffect(() => {
       if (emblaApi) {
@@ -57,11 +57,11 @@ export default function FeaturedSection() {
    }, [emblaApi]);
 
    const scrollPrev = useCallback(() => {
-      if (emblaApi) emblaApi.scrollPrev()
+      if (emblaApi) emblaApi.scrollPrev();
    }, [emblaApi])
 
    const scrollNext = useCallback(() => {
-      if (emblaApi) emblaApi.scrollNext()
+      if (emblaApi) emblaApi.scrollNext();
    }, [emblaApi])
 
    return (
@@ -79,9 +79,9 @@ export default function FeaturedSection() {
                      </button>
                   </div>
                </div>
-               <div className="embla__viewport" ref={emblaRef}>
-                  <div className="embla__container">
-                     <div className="embla__slide">
+               <div className={`${styles.emblaViewport} embla__viewport`} ref={emblaRef}>
+                  <div className={`${styles.emblaContainer} embla__container`}>
+                     <div className={`${styles.emblaSlide} embla__slide`}>
                         <div className={`${styles.recipeCard} recipeCard`}>
                            <div className={styles.recipeCardImg}>
                               <Image 
@@ -91,18 +91,50 @@ export default function FeaturedSection() {
                                  priority
                               />
                            </div>
-                           <p>1 slide</p>
+                           <h1 className={`${montserrat.className} ${styles.recipeCardTitle}`}>
+                              Savory Herb-Infused Chicken
+                           </h1>
+                           <p className={styles.recipeCardText}>
+                              Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken
+                           </p>
+                           <div className={styles.recipeInfoWrapper}>
+                              <div className={styles.recipeInfoWrapperText}>
+                                 <p>40 Min - easy prep - 3 serves</p>
+                              </div>
+                              <div className={styles.recipeInfoWrapperButton}>
+                                 <button className={roboto.className}>
+                                    view recipe
+                                 </button>
+                              </div>
+                           </div>
                         </div>
                      </div>
-                     <div className="embla__slide">
+                     <div className={`${styles.emblaSlide} embla__slide`}>
                         <div className={`${styles.recipeCard} recipeCard`}>
-                           <Image 
-                              src={'/Home/FeaturedSection/chicken.png'}
-                              alt="Savory-Herb-Infused-Chicken"
-                              width={632}
-                              height={234}
-                           />
-                           <p>2 slide</p>
+                           <div className={styles.recipeCardImg}>
+                              <Image 
+                                 src={'/Home/FeaturedSection/chicken.png'}
+                                 alt="Savory-Herb-Infused-Chicken"
+                                 fill
+                                 priority
+                              />
+                           </div>
+                           <h1 className={`${montserrat.className} ${styles.recipeCardTitle}`}>
+                              Savory Herb-Infused Chicken
+                           </h1>
+                           <p className={styles.recipeCardText}>
+                              Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken
+                           </p>
+                           <div className={styles.recipeInfoWrapper}>
+                              <div className={styles.recipeInfoWrapperText}>
+                                 <p>40 Min - easy prep - 3 serves</p>
+                              </div>
+                              <div className={styles.recipeInfoWrapperButton}>
+                                 <button className={roboto.className}>
+                                    view recipe
+                                 </button>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
