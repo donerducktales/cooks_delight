@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./styles/globals.css";
 import { roboto } from "./assets/fonts";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 export const metadata: Metadata = {
    title: "Home",
@@ -18,6 +19,7 @@ export default function RootLayout({
          <body className={roboto.className}>
             <Header />
             {children}
+            <Footer />
          </body>
       </html>
    );
