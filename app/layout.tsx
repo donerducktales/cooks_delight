@@ -3,6 +3,7 @@ import "./styles/globals.css";
 import { roboto } from "./assets/fonts";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import CTAsubscribeSection from "./components/CTAsubscribeSection/CTAsubscribeSection";
 
 export const metadata: Metadata = {
    title: "Home",
@@ -19,6 +20,7 @@ export default function RootLayout({
          <body className={roboto.className}>
             <Header />
             {children}
+            <CTAsubscribeSection />
             <Footer />
          </body>
       </html>
