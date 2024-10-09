@@ -70,6 +70,7 @@
    input {
       width: 100%;
       padding: 4px;
+      padding-left: 24px;
       flex-grow: 1;
       background-color: transparent;
       outline: none;
@@ -110,12 +111,17 @@
    
    .CtaSubscribeInput {
       margin-bottom: 8px;
+      
+      input {
+         padding: 4px 24px;
+      }
    }
 
-   // .subscribeButton {
-   //    max-width: 437px;
-   //    width: calc(100% - 32px);
-   //    margin-bottom: 40px;
-   //    height: 50px;
-   // }
+   .subscribeButton {
+      max-width: 437px;
+      width: calc(100% - 24px);
+      margin: 0;
+      margin-bottom: 48px;
+      height: 50px;
+   }
 }

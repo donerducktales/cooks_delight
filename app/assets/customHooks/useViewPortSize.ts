@@ -1,20 +1,12 @@
-'use client'
-
 import { useEffect, useState } from "react";
-
-const useWindowSize = () => {
-   const [windowSize, setWindowSize] = useState<any>([
-      window.innerWidth,
-   ]);
+const useViewPortWidth = () => {
+   const [windowSize, setWindowSize] = useState([0, 0]); // коли ми використовуєм хук, 0 для ширини екрану, 1 для висоти
 
    useEffect(() => {
       const windowSizeHandler = () => {
          setWindowSize([window.innerWidth, window.innerHeight]);
       };
-
       window.addEventListener("resize", windowSizeHandler);
-
-      windowSizeHandler();
 
       return () => {
          window.removeEventListener("resize", windowSizeHandler);
@@ -24,4 +16,5 @@ const useWindowSize = () => {
    return windowSize;
 };
 
-export default useWindowSize;
+export default useViewPortWidth;
+
