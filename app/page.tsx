@@ -89,6 +89,56 @@ export default function Home() {
                </div>
             </section>
             <FeaturedSection />
+            <section className={styles.aboutUsSection}>
+               <div className={styles.aboutUsSectionContainer}>
+                  <div className={styles.aboutUsRow1}>
+                     <div className={styles.aboutUsRow1Col1}>
+                        <div className={styles.aboutUsRow1Col1Text}>
+                           <div className={styles.aboutUsTextTag}>
+                              About Us
+                           </div>
+                           <h1 className={montserrat.className}>
+                              Our Culinary Chronicle
+                           </h1>
+                           <p className={roboto.className}>
+                              Our journey is crafted with dedication, creativity, and an unrelenting commitment to delivering delightful culinary experiences. Join us in savoring the essence of every dish and the stories that unfold.
+                           </p>
+                           <button>Read more</button>
+                        </div>
+                        <div className={styles.aboutUsRow1Col1ImageBlock}>
+                           <Image 
+                              src={'/Home/AboutUsSection/grilled-sandwich.png'}
+                              alt="grilled sandwich"
+                              fill
+                              priority
+                           />
+                        </div>
+                     </div>
+                     <div className={styles.aboutUsRow1Col2}>
+                        <div className={styles.aboutUsRow1Col2ImageBlock}>
+                           <Image 
+                              src={'/Home/AboutUsSection/grilled-vegetables.png'}
+                              alt="grille vegetables"
+                              fill
+                              priority
+                           />
+                        </div>
+                     </div>
+                  </div>
+                  <div className={styles.aboutUsRow2}>
+                     <div className={styles.aboutUsRow2Col1}>
+                        <div className={styles.aboutUsRow2ImageBlock}>
+                           <Image 
+                              src={'/Home/AboutUsSection/cooks-image.png'}
+                              alt="cooks image"
+                              fill
+                              priority
+                           /> 
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
          </div>
       </main>
    );
