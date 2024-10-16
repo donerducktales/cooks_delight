@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
-const useViewPortWidth = () => {
-   const [windowSize, setWindowSize] = useState([0, 0]); // коли ми використовуєм хук, 0 для ширини екрану, 1 для висоти
+
+const useViewPortSize = () => {
+   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+   const handleSize = () => {
+      setWindowSize({
+         width: window.innerWidth,
+         height: window.innerHeight
+      });
+   };
 
    useEffect(() => {
-      const windowSizeHandler = () => {
-         setWindowSize([window.innerWidth, window.innerHeight]);
-      };
-      window.addEventListener("resize", windowSizeHandler);
+      handleSize();
 
-      return () => {
-         window.removeEventListener("resize", windowSizeHandler);
-      };
+      window.addEventListener("resize", handleSize);
+
+      return () => window.removeEventListener("resize", handleSize);
    }, []);
 
    return windowSize;
 };
 
-export default useViewPortWidth;
-
+export default useViewPortSize;

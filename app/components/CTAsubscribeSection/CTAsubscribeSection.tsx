@@ -2,10 +2,10 @@
 
 import { montserrat } from '@/app/assets/fonts';
 import styles from './Ctasubcscribesec.module.scss';
-import useViewPortWidth from '@/app/assets/customHooks/useViewPortSize';
+import useViewPortSize from '@/app/assets/customHooks/useViewPortSize';
 
 export default function CTAsubscribeSection() {
-   const windowWidth = useViewPortWidth();
+   const windowSize = useViewPortSize();
 
    return (
       <section className={styles.CtaSubscribeSection}>
@@ -17,9 +17,9 @@ export default function CTAsubscribeSection() {
             </div>
             <div className={styles.CtaSubscribeInput}>
                <input type="text" placeholder='Email Address' />
-               {windowWidth[0] > 768 && <button className={styles.subscribeButton}>Subscribe</button>}
+               {windowSize.width > 768 && <button className={styles.subscribeButton}>Subscribe</button>}
             </div> 
-            {windowWidth[0] < 768 && <button className={styles.subscribeButton}>Subscribe</button>}
+            {windowSize.width < 768 && <button className={styles.subscribeButton}>Subscribe</button>}
          </div>
       </section>
    )
