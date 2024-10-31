@@ -7,18 +7,22 @@
    width: 100%;
    border-radius: 32px;
    border: 1px solid rgba($color: $dark, $alpha: 0.24);
-   height: 543px;
+   min-height: 543px;
    margin-bottom: 16px;
 }
 
 .embla {
-   height: 543px;
+   min-height: 543px;
    width: 100%;
 }
 
 .emblaViewport {
    margin: 0 16px;
 }
+
+// .emblaContainer {
+   
+// }
 
 .emblaSlide {
    flex: 0 0 50%;
@@ -69,20 +73,26 @@
    border-radius: 32px;
    margin: 8px;
 
-   .recipeCardTitle {
-      font-size: 1.5rem;
-      color: $dark;
-      font-weight: 700;
-      margin: 24px 24px 12px 24px;
-   }
-
-   .recipeCardText {
-      font-size: 1rem;
-      font-weight: 300;
-      color: $dark;
-      margin: 0 24px;
-      margin-bottom: 40px;
-      line-height: 1.4rem;
+   .recipeCardTextBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      .recipeCardTitle {
+         font-size: 1.5rem;
+         color: $dark;
+         font-weight: 700;
+         margin: 24px 24px 12px 24px;
+      }
+   
+      .recipeCardText {
+         font-size: 1rem;
+         font-weight: 300;
+         color: $dark;
+         margin: 0 24px;
+         margin-bottom: 40px;
+         line-height: 1.4rem;
+      }
    }
 }
 
@@ -97,6 +107,7 @@
 .recipeInfoWrapper {
    width: calc(100% - 48px);
    margin: 0 24px;
+   margin-bottom: 20px;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -123,5 +134,11 @@
       width: 132px;
       font-size: 0.875rem;
       font-weight: 500;
+   }
+}
+
+@media (max-width: 768px) {
+   .emblaSlide {
+      flex: 0 0 100%;
    }
 }
