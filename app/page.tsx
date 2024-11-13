@@ -2,6 +2,7 @@ import Image from "next/image";
 import { montserrat, roboto } from "./assets/fonts";
 import styles from "./page.module.scss";
 import FeaturedSection from "./components/FeaturedSection/FeaturedSection";
+import RecipesSection from "./components/RecipesSection/RecipesSection";
 
 export default function Home() {
    return (
@@ -89,6 +90,7 @@ export default function Home() {
                </div>
             </section>
             <FeaturedSection />
+            <RecipesSection />
             <section className={styles.aboutUsSection}>
                <div className={styles.aboutUsSectionContainer}>
                   <div className={styles.aboutUsRow1}>

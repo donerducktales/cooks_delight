@@ -1,0 +1,42 @@
+@import '/app/styles/variables.module';
+
+.RecipesSection {
+   display: flex;
+   margin-top: 80px;
+   width: 100%;
+   flex-direction: column;
+   align-items: center;
+}
+
+.RecipesTextWrapper {
+   margin-bottom: 40px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.RecipesTextWrapperTag {
+   @include tag;
+   margin-bottom: 12px;
+}
+
+.RecipesTextWrapperHeader {
+   color: $dark;
+   font-size: 2.5rem;
+   font-weight: 700;
+   max-width: 426px;
+   text-align: center;
+   text-transform: uppercase;
+   margin-bottom: 20px;
+}
+
+.RecipesTextWrapperParagraph {
+   max-width: 426px;
+   font-size: 1rem;
+   color: $dark;
+   font-weight: 300;
+   text-align: center;
+   line-height: 1.3rem;
+}
+
+
