@@ -1,20 +1,22 @@
-interface RecipesListTypes {
+interface RecipesList {
    id: number,
    imgSrc: string,
    alt: string,
    title: string,
+   type: string,
    description: string,
    prepTime: string,
    difficulty: string,
    serving: string,
 }
 
-const recipesList: RecipesListTypes[] = [
+const recipesList: RecipesList[] = [
    {
       id: 0,
-      imgSrc: '/Home/FeaturedSection/chicken.png',
+      imgSrc: '/Home/RecipeCard/chicken.png',
       alt: 'chicken',
       title: 'Savory Herb-Infused Chicken',
+      type: 'Dinner',
       description: 'Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken',
       prepTime: '40 min',
       difficulty: 'easy prep',
@@ -22,9 +24,10 @@ const recipesList: RecipesListTypes[] = [
    },
    {
       id: 1,
-      imgSrc: '/Home/FeaturedSection/chicken.png',
+      imgSrc: '/Home/RecipeCard/chicken.png',
       alt: 'chicken',
-      title: 'KFC',
+      title: 'Lemon Garlic Grilled Chicken',
+      type: 'Dinner',
       description: 'Experience the perfect blend of zesty lemon and aromatic garlic with this roasted chicken recipe',
       prepTime: '5 min',
       difficulty: 'easy prep',
@@ -32,13 +35,36 @@ const recipesList: RecipesListTypes[] = [
    },
    {
       id: 2,
-      imgSrc: '/Home/FeaturedSection/chicken.png',
+      imgSrc: '/Home/RecipeCard/chicken.png',
       alt: 'chicken',
       title: 'Borshch',
+      type: 'Lunch',
       description: 'lalya bomba',
-      prepTime: '1 hour',
+      prepTime: '2 hour',
       difficulty: 'medium prep',
       serving: '10 serves',
+   },
+   {
+      id: 3,
+      imgSrc: '/Home/RecipeCard/blueberry.png',
+      alt: 'blueberry',
+      title: 'Berry Bliss Smoothie Bowl',
+      type: 'Vegan',
+      description: 'This berry smoothie bowl is not only visually appealing but also a powerhouse of antioxidants.',
+      prepTime: '10 Min',
+      difficulty: 'easy prep',
+      serving: '2 serves',
+   },
+   {
+      id: 4,
+      imgSrc: '/Home/RecipeCard/quinoa-veggie.png',
+      alt: 'blueberry',
+      title: 'Quinoa Veggie Stir-Fry',
+      type: 'Vegan',
+      description: 'Quick, wholesome, and bursting with flavors, its perfect for a healthy weeknight dinner.',
+      prepTime: '30 Min',
+      difficulty: 'easy prep',
+      serving: '3 serves',
    },
 ];
 

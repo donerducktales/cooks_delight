@@ -10,13 +10,19 @@ interface RecipeCardTypes {
    prepTime: string,
    difficulty: string,
    serving: string,
+   maxWidthProp: string,
 }
 
 export default function RecipeCard({
-   imgSrc, imgAlt, title, description, prepTime, difficulty, serving,
+   imgSrc, imgAlt, title, description, prepTime, difficulty, serving, maxWidthProp
 }: RecipeCardTypes) {
    return (
-      <div className={`${styles.recipeCard} recipeCard`}>
+      <div 
+         className={`${styles.recipeCard} recipeCard`}
+         style={{
+            maxWidth: maxWidthProp
+         }}
+      >
          <div className={`${styles.recipeCardImg} recipeCardImg`}>
             <Image 
                src={imgSrc}
