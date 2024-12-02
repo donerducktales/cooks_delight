@@ -63,82 +63,20 @@
    }
 }
 
-.recipeCard {
-   max-width: 632px;
-   min-height: 437px;
-   background-color: $light;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   border-radius: 32px;
-   margin: 8px;
-
-   .recipeCardTextBlock {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      
-      .recipeCardTitle {
-         font-size: 1.5rem;
-         color: $dark;
-         font-weight: 700;
-         margin: 24px 24px 12px 24px;
-      }
-   
-      .recipeCardText {
-         font-size: 1rem;
-         font-weight: 300;
-         color: $dark;
-         margin: 0 24px;
-         margin-bottom: 40px;
-         line-height: 1.4rem;
-      }
-   }
-}
-
-.recipeCardImg {
-   position: relative;
-   max-width: 632px;
-   max-height: 234px;
-   width: 100%;
-   aspect-ratio: 70/45;
-}
-
-.recipeInfoWrapper {
-   width: calc(100% - 48px);
-   margin: 0 24px;
-   margin-bottom: 20px;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-}
-
-.recipeInfoWrapperText {
-   width: 50%;
-   font-size: 0.75rem;
-   color: $dark;
-   font-weight: 500;
-}
-
-.recipeInfoWrapperButton {
-   display: flex;
-   width: 50%;
-   justify-content: flex-end;
-
-   button {
-      @include subscribe-button;
-      background-color: $light;
-      color: $dark;
-      border: 1px solid $dark;
-      width: 132px;
-      font-size: 0.875rem;
-      font-weight: 500;
-   }
-}
-
 @media (max-width: 768px) {
    .emblaSlide {
       flex: 0 0 100%;
+   }
+}
+
+@media (max-width: 430px) {
+   .carouselNavigation {
+      flex-direction: column;
+      
+      h1 {
+         margin: 0;
+         margin-bottom: 24px;
+         font-size: 1.625rem;
+      }
    }
 }

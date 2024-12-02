@@ -7,7 +7,7 @@ import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { montserrat, roboto } from "@/app/assets/fonts";
 import recipesList from "@/app/assets/recipesList";
-import RecipeCard from "./RecipeCard";
+import RecipeCard from "../RecipeCard/RecipeCard";
 
 export default function FeaturedSection() {
    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
