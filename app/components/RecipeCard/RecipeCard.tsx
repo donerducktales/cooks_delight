@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { montserrat } from "@/app/assets/fonts";
-import styles from '@/app/components/FeaturedSection/featured-section.module.scss';
+import styles from '@/app/components/RecipeCard/recipe-card.module.scss';
 
 interface RecipeCardTypes {
    imgSrc: string,

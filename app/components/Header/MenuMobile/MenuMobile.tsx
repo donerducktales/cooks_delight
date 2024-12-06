@@ -1,3 +1,5 @@
+'use client'
+
 import styled from 'styled-components';
 import scssvariables from '@/app/styles/_variables.module.scss';
 import { montserrat, roboto } from '@/app/assets/fonts';
@@ -5,23 +7,24 @@ import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const StyledMenuMobile = styled.div<{open?: boolean}>`
+const StyledMenuMobile = styled.div<{open: boolean}>`
    display: none;
 
    @media (max-width: 800px) {
       background-color: ${scssvariables.dark};
       display: flex;
-      position: absolute;
-      top: 86.5px;
+      transform: translateY(-17px);
       width: 100%;
-      height: 100%;
+      height: 100vh;
       padding-bottom: 20px;
 
       .mobile-nav {
          width: 100%;
+         height: 510px;
          margin: 0 16px;
          padding: 0 16px;
          background-color: rgba(255, 251, 242, 0.05);
+         transition: background-color 3s;
          border-radius: 0 0 24px 24px;
          display: flex;
          flex-direction: column;
@@ -104,7 +107,7 @@ const StyledMenuMobile = styled.div<{open?: boolean}>`
 
 export default function MenuMobile({open}: {open: boolean}) {
    return (
-      <StyledMenuMobile>
+      <StyledMenuMobile open={open} >
          <nav className='mobile-nav'>
             <ul className={montserrat.className}>
                <li>Home</li>

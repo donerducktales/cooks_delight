@@ -5,7 +5,7 @@ import styles from './recipes-section.module.scss';
 import styled from 'styled-components';
 import scssvariables from '@/app/styles/_variables.module.scss';
 import recipesList from '@/app/assets/recipesList';
-import RecipeCard from '../FeaturedSection/RecipeCard';
+import RecipeCard from '../RecipeCard/RecipeCard';
 import { useState } from 'react';
 
 const TabItem = styled.button`
