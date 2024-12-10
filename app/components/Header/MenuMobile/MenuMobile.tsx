@@ -20,7 +20,7 @@ const StyledMenuMobile = styled.div<{open: boolean}>`
 
       .mobile-nav {
          width: 100%;
-         height: 510px;
+         height: 422px;
          margin: 0 16px;
          padding: 0 16px;
          background-color: rgba(255, 251, 242, 0.05);
