@@ -27,7 +27,7 @@ const TabItem = styled.button`
 export default function RecipesSection() {
    const [filteredRecipes, setFilteredRecipes] = useState(recipesList);
 
-   const handleClick = (recipeType: any) => {
+   const handleClick = (recipeType: string) => {
       const filtered = recipesList.filter(el => el.type.includes(recipeType));
       setFilteredRecipes(filtered);
    }

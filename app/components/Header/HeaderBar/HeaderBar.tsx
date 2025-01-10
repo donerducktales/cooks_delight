@@ -6,6 +6,9 @@ import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 import scssvariables from '@/app/styles/_variables.module.scss';
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import styled from 'styled-components';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { links } from '@/app/assets/navLinks';
 
 const HeaderContainer = styled.div<{ open?: boolean }>`
    @media (max-width: 800px) {
@@ -28,6 +31,9 @@ export default function HeaderBar({open, setOpen}: {open: boolean, setOpen: any}
          return { backgroundColor: colorProperty, transition: 'background-color 0.7s'}
       }
    }
+
+   const pathname = usePathname();
+   const isActiveLink = (path: string) => path === pathname;
 
    return (
       <header
@@ -55,12 +61,20 @@ export default function HeaderBar({open, setOpen}: {open: boolean, setOpen: any}
                      <p>Cooks Delight</p>
                   </NavLogoText>
                </div>
-               <ul className={styles.navLinks}>
-                  <li>Home</li>
-                  <li>Recipes</li>
-                  <li>Cooking tips</li>
-                  <li>About Us</li>
-               </ul>
+               <div className={styles.navLinks}>
+                  {links.map((link) =>
+                     <Link 
+                        key={link.id} 
+                        href={link.path} 
+                        style={{
+                           borderBottom: isActiveLink(link.path) ? `5px solid ${scssvariables.primaryRed}` : '',
+                           color: isActiveLink(link.path) ? scssvariables.dark : '',
+                        }}
+                     >
+                        {link.name}
+                     </Link>
+                  )}
+               </div>
                <div className={styles.navButtons}>
                   <button className={styles.searchButton}>
                      <MagnifyingGlassIcon />
