@@ -1,7 +1,9 @@
 // 'use client'
 
+import { links } from '@/app/assets/navLinks';
 import styles from '@/app/components/Footer/footer.module.scss';
 import Image from "next/image";
+import Link from 'next/link';
 
 export default function Footer() {
    return (
@@ -18,10 +20,13 @@ export default function Footer() {
                   <p>Cooks Delight</p>
                </div>
                <ul className={styles.footerNavLinks}>
-                  <li>Home</li>
-                  <li>Recipes</li>
-                  <li>Cooking tips</li>
-                  <li>About Us</li>
+                  {links.map((link) =>
+                     <li key={link.id}>
+                        <Link href={link.path}>
+                           {link.name}
+                        </Link>
+                     </li>
+                  )}
                </ul>
                <div className={styles.footerNavSocialMedia}>
                   <Image 

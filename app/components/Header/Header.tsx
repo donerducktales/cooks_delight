@@ -32,7 +32,7 @@ export default function Header() {
    return (
       <HeaderStyled open={open}>
          <HeaderBar open={open} setOpen={setOpen}/>
-         {open && <MenuMobile open={open} />}
+         {open && <MenuMobile open={open} setOpen={setOpen} />}
       </HeaderStyled>
    )
 }

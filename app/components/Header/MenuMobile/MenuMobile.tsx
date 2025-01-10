@@ -6,6 +6,7 @@ import { montserrat, roboto } from '@/app/assets/fonts';
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 import Image from 'next/image';
 import Link from 'next/link';
+import { links } from '@/app/assets/navLinks';
 
 const StyledMenuMobile = styled.div<{open: boolean}>`
    display: none;
@@ -33,23 +34,24 @@ const StyledMenuMobile = styled.div<{open: boolean}>`
             display: flex;
             flex-direction: column;
             align-items: start;
-            gap: 15px;
             margin: 40px 0;
+            gap: 12px;
 
             li {
-               color: ${scssvariables.background};
+               height: 48px;
                font-size: 1rem;
                text-transform: uppercase;
                font-weight: 500;
-               width: 100%;
+               width: calc(100% - 8px);
                margin-left: 6px;
-            }
+               border-bottom: 1px solid ${scssvariables.background};
+               display: flex;
+               align-items: center;
 
-            span {
-               width: 100%;
-               height: 1px;
-               background-color: ${scssvariables.background};
-               margin-bottom: 10px;
+               a {
+                  text-decoration: none;
+                  color: ${scssvariables.background};
+               }
             }
          }
 
@@ -105,19 +107,18 @@ const StyledMenuMobile = styled.div<{open: boolean}>`
    }
 `;
 
-export default function MenuMobile({open}: {open: boolean}) {
+export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: any}) {
    return (
       <StyledMenuMobile open={open} >
          <nav className='mobile-nav'>
             <ul className={montserrat.className}>
-               <li>Home</li>
-               <span></span>
-               <li>Recipes</li>
-               <span></span>
-               <li>Cooking Tips</li>
-               <span></span>
-               <li>About Us</li>
-               <span></span>
+               {links.map((link) => 
+                  <li key={link.id}>
+                     <Link href={link.path} onClick={() => setOpen(false)}>
+                        {link.name}
+                     </Link>
+                  </li>
+               )}
             </ul>
             <div className="mobile-nav_buttons">
                <button className="search-button">
