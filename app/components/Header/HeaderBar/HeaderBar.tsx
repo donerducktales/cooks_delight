@@ -77,7 +77,7 @@ export default function HeaderBar({open, setOpen}: {open: boolean, setOpen: any}
                </div>
                <div className={styles.navButtons}>
                   <button className={styles.searchButton}>
-                     <MagnifyingGlassIcon />
+                     <MagnifyingGlassIcon className='w-6 h-6'/>
                   </button>
                   <button className={styles.subscribeButton}>
                      Subscribe
@@ -88,7 +88,7 @@ export default function HeaderBar({open, setOpen}: {open: boolean, setOpen: any}
                   onClick={() => setOpen(!open)}
                   style={toDark(scssvariables.light + '16')}
                >
-                  {open ? <XMarkIcon color={scssvariables.primaryOrange} /> : <Bars3Icon />}
+                  {open ? <XMarkIcon color={scssvariables.primaryOrange} className='h-5 w-5' /> : <Bars3Icon className='h-5 w-5' />}
                </button>
             </nav>
          </HeaderContainer>

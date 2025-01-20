@@ -122,7 +122,7 @@ export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: any
             </ul>
             <div className="mobile-nav_buttons">
                <button className="search-button">
-                  <MagnifyingGlassIcon style={{color: scssvariables.background}}/>
+                  <MagnifyingGlassIcon style={{color: scssvariables.background}} className='w-6 h-6'/>
                </button>
                <button className={`${roboto.className} subscribe-button`}>
                   Subscribe

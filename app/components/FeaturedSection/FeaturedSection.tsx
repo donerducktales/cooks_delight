@@ -33,10 +33,10 @@ export default function FeaturedSection() {
                <h1 className={montserrat.className}>featured recipes</h1>
                <div className={`${styles.navigationButtons} navigationButtons`}>
                   <button className={`embla__prev`} onClick={scrollPrev}>
-                     <ChevronLeftIcon />
+                     <ChevronLeftIcon className="w-5 h-6" />
                   </button>
                   <button className={`embla__next`} onClick={scrollNext}>
-                     <ChevronRightIcon />
+                     <ChevronRightIcon className="w-5 h-6" />
                   </button>
                </div>
             </div>
