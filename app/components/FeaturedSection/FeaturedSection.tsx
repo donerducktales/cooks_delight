@@ -14,7 +14,7 @@ export default function FeaturedSection() {
 
    useEffect(() => {
       if (emblaApi) {
-         console.log(emblaApi.slideNodes());
+         emblaApi.slideNodes();
       }
    }, [emblaApi]);
 
