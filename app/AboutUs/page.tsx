@@ -5,7 +5,6 @@ import authorImage from '@/public/AboutUs/author-image.png';
 import facebookLogoDark from '@/public/AboutUs/facebook-logo-dark.png';
 import instaLogoDark from '@/public/AboutUs/insta-logo-dark.png';
 import youtubeLogoDark from '@/public/AboutUs/yt-logo-dark.png';
-import smc from '@/public/AboutUs/gallery-wrapper-img1.png'
 
 export default function AboutUs() {
    return (
@@ -65,46 +64,86 @@ export default function AboutUs() {
                   </div>
                </div>
             </div>
-            <div className={`w-full flex flex-col items-center justify-start ${'galleryWrapper'}`}>
-               <div className={`grid min-[1326px]:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 [&>div]:h-60 [&>div]:w-[308px] [&>div]:relative`}>
+            <div className={`w-full flex flex-col items-center justify-center ${'galleryWrapper'}`}>
+               <div className={`w-full grid min-[1326px]:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 [&>div]:flex [&>div]:justify-center`}>
                   <div>
                      <Image 
                         src={`/AboutUs/gallery-wrapper-img1.png`}
                         alt="gallery wrapper image"
-                        fill
-                        sizes="308px"
+                        sizes="100vw"
+                        width={408}
+                        height={240}
+                        className={`w-full h-auto max-w-[408px]`}
                      />
                   </div>
                   <div>
                      <Image 
                         src={`/AboutUs/gallery-wrapper-img2.png`}
                         alt="gallery wrapper image"
-                        fill
-                        sizes="308px"
+                        sizes="100vw"
+                        width={408}
+                        height={240}
+                        className={`w-full h-auto max-w-[408px]`}
                      />
                   </div>
                   <div>
                      <Image 
                         src={`/AboutUs/gallery-wrapper-img3.png`}
                         alt="gallery wrapper image"
-                        fill
-                        sizes="308px"
+                        sizes="100vw"
+                        width={408}
+                        height={240}
+                        className={`w-full h-auto max-w-[408px]`}
                      />
                   </div>
                   <div>
                      <Image 
                         src={`/AboutUs/gallery-wrapper-img4.png`}
                         alt="gallery wrapper image"
-                        fill
-                        sizes="308px"
+                        sizes="100vw"
+                        width={408}
+                        height={240}
+                        className={`w-full h-auto max-w-[408px]`}
                      />
                   </div>
                   <div>
                      <Image 
                         src={`/AboutUs/gallery-wrapper-img5.png`}
                         alt="gallery wrapper image"
-                        fill
-                        sizes="308px"
+                        sizes="100vw"
+                        width={408}
+                        height={240}
+                        className={`w-full h-auto max-w-[408px]`}
+                     />
+                  </div>
+                  <div>
+                     <Image 
+                        src={`/AboutUs/gallery-wrapper-img6.png`}
+                        alt="gallery wrapper image"
+                        sizes="100vw"
+                        width={408}
+                        height={240}
+                        className={`w-full h-auto max-w-[408px]`}
+                     />
+                  </div>
+                  <div>
+                     <Image 
+                        src={`/AboutUs/gallery-wrapper-img7.png`}
+                        alt="gallery wrapper image"
+                        sizes="100vw"
+                        width={408}
+                        height={240}
+                        className={`w-full h-auto max-w-[408px]`}
+                     />
+                  </div>
+                  <div>
+                     <Image 
+                        src={`/AboutUs/gallery-wrapper-img8.png`}
+                        alt="gallery wrapper image"
+                        sizes="100vw"
+                        width={408}
+                        height={240}
+                        className={`w-full h-auto max-w-[408px]`}
                      />
                   </div>
                </div>
