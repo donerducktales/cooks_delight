@@ -1,4 +1,10 @@
+import styled from "styled-components";
 import { montserrat } from "../assets/fonts";
+import EssentialSection from "../components/EssentialSection/EssentialSection";
+
+// const EssentialsSectionItem = styled.div`
+//    display: flex;
+// `;
 
 export default function CookingTips() {
    return (
@@ -13,9 +19,7 @@ export default function CookingTips() {
                      Welcome to Cooks Delight's treasure trove of cooking wisdom! Whether you're a seasoned chef or just starting your culinary journey, our cooking tips are designed to elevate your skills, enhance your kitchen experience, and bring joy to your cooking adventures.
                   </p>
                </div>
-               <div className={`rounded-3xl border border-solid border-dark border-opacity-25 w-full mt-10 mb-10 ml-8 mr-8 flex flex-col items-center gap-10 ${'essentialSection'}`}>
-                  
-               </div>
+               <EssentialSection />
             </section>
          </div>
       </main>
