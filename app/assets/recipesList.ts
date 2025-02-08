@@ -39,7 +39,7 @@ const recipesList: RecipesList[] = [
       alt: 'chicken',
       title: 'Borshch',
       type: 'Lunch',
-      description: 'lalya bomba',
+      description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. ',
       prepTime: '2 hour',
       difficulty: 'medium prep',
       serving: '10 serves',
