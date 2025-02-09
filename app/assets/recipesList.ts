@@ -13,7 +13,7 @@ interface RecipesList {
 const recipesList: RecipesList[] = [
    {
       id: 0,
-      imgSrc: '/Home/RecipeCard/chicken.png',
+      imgSrc: '/Home/RecipeCard/chicken-image.png',
       alt: 'chicken',
       title: 'Savory Herb-Infused Chicken',
       type: 'Dinner',
@@ -24,8 +24,8 @@ const recipesList: RecipesList[] = [
    },
    {
       id: 1,
-      imgSrc: '/Home/RecipeCard/chicken.png',
-      alt: 'chicken',
+      imgSrc: '/Home/RecipeCard/lemon-chicken.png',
+      alt: 'lemon chicken',
       title: 'Lemon Garlic Grilled Chicken',
       type: 'Dinner',
       description: 'Experience the perfect blend of zesty lemon and aromatic garlic with this roasted chicken recipe',
@@ -35,11 +35,11 @@ const recipesList: RecipesList[] = [
    },
    {
       id: 2,
-      imgSrc: '/Home/RecipeCard/chicken.png',
-      alt: 'chicken',
-      title: 'Borshch',
+      imgSrc: '/Home/RecipeCard/spaghetti.png',
+      alt: 'spaghetti',
+      title: 'Spaghetti Aglio e Olio',
       type: 'Lunch',
-      description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. ',
+      description: 'A minimalist yet flavorful dish with garlic, olive oil, and a hint of red pepper flakes.',
       prepTime: '2 hour',
       difficulty: 'medium prep',
       serving: '10 serves',
@@ -65,6 +65,17 @@ const recipesList: RecipesList[] = [
       prepTime: '30 Min',
       difficulty: 'easy prep',
       serving: '3 serves',
+   },
+   {
+      id: 5,
+      imgSrc: '/Home/RecipeCard/grilled-veggies.png',
+      alt: 'grilled veggies',
+      title: 'Grilled Veggies with Sauce',
+      type: 'Vegan',
+      description: 'Served with a zesty chimichurri sauce its a perfect addition to your outdoor gatherings.',
+      prepTime: '25 Min',
+      difficulty: 'easy prep',
+      serving: '6 serves',
    },
 ];
 

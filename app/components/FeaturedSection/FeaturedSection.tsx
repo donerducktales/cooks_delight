@@ -55,7 +55,7 @@ export default function FeaturedSection() {
                            prepTime={el.prepTime}
                            difficulty={el.difficulty}
                            serving={el.serving}
-                           maxWidthProp="632px"
+                           // maxWidthProp="632px"
                         />
                      </div>
                   )}

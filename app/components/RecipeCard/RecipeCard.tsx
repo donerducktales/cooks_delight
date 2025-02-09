@@ -10,27 +10,30 @@ interface RecipeCardTypes {
    prepTime: string,
    difficulty: string,
    serving: string,
-   maxWidthProp: string,
+   // maxWidthProp: string,
 }
 
 export default function RecipeCard({
-   imgSrc, imgAlt, title, description, prepTime, difficulty, serving, maxWidthProp
+   imgSrc, imgAlt, title, description, prepTime, difficulty, serving, 
 }: RecipeCardTypes) {
    return (
       <div 
          className={`${styles.recipeCard} recipeCard`}
          style={{
-            maxWidth: maxWidthProp
+            // maxWidth: maxWidthProp
          }}
       >
-         <div className={`${styles.recipeCardImg} recipeCardImg`}>
-            <Image 
-               src={imgSrc}
-               alt={imgAlt}
-               fill
-               priority
-            />
-         </div>
+         {/* <div className={`${styles.recipeCardImg} recipeCardImg`}> */}
+         <Image 
+            src={imgSrc}
+            alt={imgAlt}
+            sizes="100vw"
+            width={632}
+            height={234}
+            className={`w-full h-auto max-w-[632px]`}
+            priority
+         />
+         {/* </div> */}
          <div className={styles.recipeCardTextBlock}>
             <h1 className={`${montserrat.className} ${styles.recipeCardTitle} recipeCardTitle`}>
                {title}
