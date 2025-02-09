@@ -65,7 +65,7 @@ export default function RecipesSection() {
                   prepTime={el.prepTime}
                   difficulty={el.difficulty}
                   serving={el.serving}
-                  maxWidthProp='427px'
+                  // maxWidthProp='427px'
                />
             )}
          </div>
