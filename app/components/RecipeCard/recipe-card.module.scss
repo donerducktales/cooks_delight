@@ -3,6 +3,8 @@
 .recipeCard {
    max-width: 632px;
    min-height: 437px;
+   // max-height: 545px;
+   // height: 100%;
    background-color: $light;
    display: flex;
    flex-direction: column;
@@ -25,9 +27,10 @@
       .recipeCardText {
          font-size: 1rem;
          font-weight: 300;
+         min-height: 50px;
          color: $dark;
          margin: 0 24px;
-         margin-bottom: 40px;
+         margin-bottom: 20px;
          line-height: 1.4rem;
       }
    }
