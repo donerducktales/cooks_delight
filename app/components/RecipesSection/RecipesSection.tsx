@@ -13,7 +13,6 @@ const TabItem = styled.button`
    padding: 0 24px;
    border-radius: 24px;
    border: 1px solid ${scssvariables.dark};
-   background-color: ${scssvariables.background};
    display: flex;
    justify-content: center;
    align-items: center;
@@ -26,6 +25,7 @@ const TabItem = styled.button`
 
 export default function RecipesSection() {
    const [filteredRecipes, setFilteredRecipes] = useState(recipesList);
+   const [color, setColor] = useState<string>('');
 
    const handleClick = (recipeType: string) => {
       const filtered = recipesList.filter(el => el.type.includes(recipeType));
@@ -50,19 +50,17 @@ export default function RecipesSection() {
                recipesType.map((el) => 
                   <TabItem
                      key={el.id} 
-                     onClick={() => handleClick(el.mealTypeAction)}
+                     onClick={() => {handleClick(el.mealTypeAction); setColor(el.mealTypeAction)}}
+                     style={{
+                        backgroundColor: color === el.mealTypeAction ? 
+                        scssvariables.primaryGreen : 
+                        scssvariables.background,
+                     }}
                   >
                      {el.mealType}
                   </TabItem>
                )
             }
-            {/* <TabItem onClick={() => handleClick('')}>All</TabItem>
-            <TabItem onClick={() => handleClick('Vegan')}>Vegan</TabItem>
-            <TabItem onClick={() => handleClick('Breakfast')}>Breakfast</TabItem>
-            <TabItem onClick={() => handleClick('Lunch')}>Lunch</TabItem>
-            <TabItem onClick={() => handleClick('Dinner')}>Dinner</TabItem>
-            <TabItem onClick={() => handleClick('Dessert')}>Dessert</TabItem>
-            <TabItem onClick={() => handleClick('Quick Bite!')}>Quick Bite!</TabItem> */}
          </div>
          <div className={styles.RecipesCardWrapper}>
             {filteredRecipes.map(el =>
