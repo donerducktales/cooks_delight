@@ -4,7 +4,7 @@ import { montserrat } from '@/app/assets/fonts';
 import styles from './recipes-section.module.scss';
 import styled from 'styled-components';
 import scssvariables from '@/app/styles/_variables.module.scss';
-import recipesList from '@/app/assets/recipesList';
+import recipesList, { recipesType } from '@/app/assets/recipesList';
 import RecipeCard from '../RecipeCard/RecipeCard';
 import { useState } from 'react';
 
@@ -46,13 +46,23 @@ export default function RecipesSection() {
             </p>
          </div>
          <div className={styles.RecipesTabWrapper}>
-            <TabItem onClick={() => handleClick('')}>All</TabItem>
+            {
+               recipesType.map((el) => 
+                  <TabItem
+                     key={el.id} 
+                     onClick={() => handleClick(el.mealTypeAction)}
+                  >
+                     {el.mealType}
+                  </TabItem>
+               )
+            }
+            {/* <TabItem onClick={() => handleClick('')}>All</TabItem>
             <TabItem onClick={() => handleClick('Vegan')}>Vegan</TabItem>
             <TabItem onClick={() => handleClick('Breakfast')}>Breakfast</TabItem>
             <TabItem onClick={() => handleClick('Lunch')}>Lunch</TabItem>
             <TabItem onClick={() => handleClick('Dinner')}>Dinner</TabItem>
             <TabItem onClick={() => handleClick('Dessert')}>Dessert</TabItem>
-            <TabItem onClick={() => handleClick('Quick Bite!')}>Quick Bite!</TabItem>
+            <TabItem onClick={() => handleClick('Quick Bite!')}>Quick Bite!</TabItem> */}
          </div>
          <div className={styles.RecipesCardWrapper}>
             {filteredRecipes.map(el =>

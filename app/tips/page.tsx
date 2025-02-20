@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import { Metadata } from "next";
 import { montserrat } from "../assets/fonts";
 import EssentialSection from "../components/EssentialSection/EssentialSection";
 
-// const EssentialsSectionItem = styled.div`
-//    display: flex;
-// `;
+export const metadata: Metadata = {
+   title: 'Cooking Tips'
+}
 
 export default function CookingTips() {
    return (

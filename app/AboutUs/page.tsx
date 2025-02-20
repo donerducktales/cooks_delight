@@ -5,6 +5,11 @@ import authorImage from '@/public/AboutUs/author-image.png';
 import facebookLogoDark from '@/public/AboutUs/facebook-logo-dark.png';
 import instaLogoDark from '@/public/AboutUs/insta-logo-dark.png';
 import youtubeLogoDark from '@/public/AboutUs/yt-logo-dark.png';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: 'About Us'
+}
 
 export default function AboutUs() {
    return (
