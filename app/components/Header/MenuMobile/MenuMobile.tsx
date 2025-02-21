@@ -11,7 +11,7 @@ import { links } from '@/app/assets/navLinks';
 const StyledMenuMobile = styled.div<{open: boolean}>`
    display: none;
 
-   @media (max-width: 800px) {
+   @media (max-width: 1000px) {
       background-color: ${scssvariables.dark};
       display: flex;
       transform: translateY(-17px);

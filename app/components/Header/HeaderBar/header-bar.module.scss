@@ -29,12 +29,15 @@
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
+   flex: 1 1 100%;
 }
 
 .navLogo {
+   width: 13%;
    display: flex;
    flex-direction: row;
    align-items: center;
+   justify-content: start;
    gap: 8px;
    color: $dark;
    font-size: 0.875rem;
@@ -46,8 +49,10 @@
 }
 
 .navLinks {
+   width: 44%;
    display: flex;
    flex-direction: row;
+   justify-content: end;
    gap: 16px;
    margin-top: 5px;
 
@@ -69,33 +74,37 @@
 }
 
 .navButtons {
+   width: 33%;
    display: flex;
    flex-direction: row;
+   justify-content: end;
    gap: 16px;
 }
 
 .subscribeButton {
    @include subscribe-button;
+   height: 36px;
+   min-width: 122px;
 }
 
-.searchButton {
-   width: 37px;
-   height: 37px;
-   border: none;
-   outline: none;
-   border-radius: 16px;
-   background-color: rgba($color: $dark, $alpha: 0.08);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   cursor: pointer;
-}
+// .searchButton {
+//    width: 37px;
+//    height: 37px;
+//    border: none;
+//    outline: none;
+//    border-radius: 16px;
+//    background-color: rgba($color: $dark, $alpha: 0.08);
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    cursor: pointer;
+// }
 
 .menuHamburgerButton {
    display: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
    .navLinks, .navButtons {
       display: none;
    }

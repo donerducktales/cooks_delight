@@ -9,9 +9,10 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { links } from '@/app/assets/navLinks';
+import SearchButton from '../../SearchButton/SearchButton';
 
 const HeaderContainer = styled.div<{ open?: boolean }>`
-   @media (max-width: 800px) {
+   @media (max-width: 1000px) {
       background-color: ${({ open }) => open && `rgba(255, 251, 242, 0.05)`};
       border-radius: ${({ open }) => open && '24px 24px 0 0'};
       transition: background-color 0.7s;
@@ -19,7 +20,7 @@ const HeaderContainer = styled.div<{ open?: boolean }>`
 `;
 
 const NavLogoText = styled.div<{ open?: boolean }>`
-   @media (max-width: 800px) {
+   @media (max-width: 1000px) {
       color: ${({ open }) => open && scssvariables.background};
       transition: color 0.7s;
    }
@@ -76,9 +77,10 @@ export default function HeaderBar({open, setOpen}: {open: boolean, setOpen: any}
                   )}
                </div>
                <div className={styles.navButtons}>
-                  <button className={styles.searchButton}>
+                  {/* <button className={styles.searchButton}>
                      <MagnifyingGlassIcon className='w-6 h-6'/>
-                  </button>
+                  </button> */}
+                  <SearchButton />
                   <button className={styles.subscribeButton}>
                      Subscribe
                   </button>
