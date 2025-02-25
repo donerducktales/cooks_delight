@@ -12,7 +12,7 @@ import { links } from '@/app/assets/navLinks';
 import SearchButton from '../../SearchButton/SearchButton';
 
 const HeaderContainer = styled.div<{ open?: boolean }>`
-   @media (max-width: 1000px) {
+   @media (max-width: 1024px) {
       background-color: ${({ open }) => open && `rgba(255, 251, 242, 0.05)`};
       border-radius: ${({ open }) => open && '24px 24px 0 0'};
       transition: background-color 0.7s;
@@ -20,7 +20,7 @@ const HeaderContainer = styled.div<{ open?: boolean }>`
 `;
 
 const NavLogoText = styled.div<{ open?: boolean }>`
-   @media (max-width: 1000px) {
+   @media (max-width: 1024px) {
       color: ${({ open }) => open && scssvariables.background};
       transition: color 0.7s;
    }

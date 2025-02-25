@@ -3,15 +3,17 @@
 import styled from 'styled-components';
 import scssvariables from '@/app/styles/_variables.module.scss';
 import { montserrat, roboto } from '@/app/assets/fonts';
-import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
+import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/16/solid';
 import Image from 'next/image';
 import Link from 'next/link';
 import { links } from '@/app/assets/navLinks';
+import { useState } from 'react';
+import SearchButtonMobile from '../../SearchButton/SearchButtonMobile';
 
 const StyledMenuMobile = styled.div<{open: boolean}>`
    display: none;
 
-   @media (max-width: 1000px) {
+   @media (max-width: 1024px) {
       background-color: ${scssvariables.dark};
       display: flex;
       transform: translateY(-17px);
@@ -21,7 +23,7 @@ const StyledMenuMobile = styled.div<{open: boolean}>`
 
       .mobile-nav {
          width: 100%;
-         height: 422px;
+         height: 462px;
          margin: 0 16px;
          padding: 0 16px;
          background-color: rgba(255, 251, 242, 0.05);
@@ -61,7 +63,7 @@ const StyledMenuMobile = styled.div<{open: boolean}>`
             justify-content: center;
 
             .search-button {
-               width: 37px;
+               min-width: 33px;
                height: 37px;
                border: none;
                outline: none;
@@ -95,7 +97,7 @@ const StyledMenuMobile = styled.div<{open: boolean}>`
          display: flex;
          align-items: center;
          justify-content: center;
-         margin-top: 40px;
+         margin-top: 20px;
          gap: 16px;
          cursor: pointer;
 
@@ -108,6 +110,8 @@ const StyledMenuMobile = styled.div<{open: boolean}>`
 `;
 
 export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: any}) {
+   const [toggleSearch, setToggleSearch] = useState<boolean>(false);
+   
    return (
       <StyledMenuMobile open={open} >
          <nav className='mobile-nav'>
@@ -121,13 +125,21 @@ export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: any
                )}
             </ul>
             <div className="mobile-nav_buttons">
-               <button className="search-button">
-                  <MagnifyingGlassIcon style={{color: scssvariables.background}} className='w-6 h-6'/>
+               <button 
+                  className="search-button"
+                  onClick={() => setToggleSearch(!toggleSearch)}
+               >
+                  {
+                     toggleSearch ?
+                     <XMarkIcon className='w-6 h-6 text-background' /> :
+                     <MagnifyingGlassIcon style={{color: scssvariables.background}} className='w-6 h-6'/>
+                  }
                </button>
                <button className={`${roboto.className} subscribe-button`}>
                   Subscribe
                </button>
             </div>
+            {toggleSearch && <SearchButtonMobile />}
             <div className='social-media-links'>
                <Image 
                   src={'/Header/facebook-logo.png'}

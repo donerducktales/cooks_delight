@@ -14,7 +14,7 @@ const HeaderStyled = styled.header<{open: boolean}>`
    position: ${({open}) => open && 'fixed'};
    z-index: 9;
 
-   @media (max-width: 1000px) {
+   @media (max-width: 1024px) {
       overflow-x: scroll;
    }
 `;
@@ -24,7 +24,7 @@ export default function Header() {
    const windowSize = useViewPortSize();
 
    useEffect (() => {
-      if (windowSize.width > 1000) {
+      if (windowSize.width > 1024) {
          setOpen(false);
       }
    });
