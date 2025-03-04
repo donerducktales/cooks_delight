@@ -34,20 +34,22 @@ export default function RecipeCard({
             priority
          />
          {/* </div> */}
-         <div className={styles.recipeCardTextBlock}>
-            <h1 className={`${montserrat.className} ${styles.recipeCardTitle} recipeCardTitle`}>
-               {title}
-            </h1>
-            <p className={`${styles.recipeCardText} recipeCardText`}>
-               {description}
-            </p>
-         </div>
-         <div className={`${styles.recipeInfoWrapper} recipeInfoWrapper`}>
-            <div className={`${styles.recipeInfoWrapperText} recipeInfoWrapperText`}>
-               <p>{prepTime} - {difficulty} - {serving}</p>
+         <div className={`${styles.recipeCardDescription}`}>
+            <div className={styles.recipeCardTextBlock}>
+               <h1 className={`${montserrat.className} ${styles.recipeCardTitle} recipeCardTitle`}>
+                  {title}
+               </h1>
+               <p className={`${styles.recipeCardText} recipeCardText`}>
+                  {description}
+               </p>
             </div>
-            <div className={`${styles.recipeInfoWrapperButton} recipeInfoWrapperButton`}>
-               <button>view recipe</button>
+            <div className={`${styles.recipeInfoWrapper} recipeInfoWrapper`}>
+               <div className={`${styles.recipeInfoWrapperText} recipeInfoWrapperText`}>
+                  <p>{prepTime} - {difficulty} - {serving}</p>
+               </div>
+               <div className={`${styles.recipeInfoWrapperButton} recipeInfoWrapperButton`}>
+                  <button>view recipe</button>
+               </div>
             </div>
          </div>
       </div>
