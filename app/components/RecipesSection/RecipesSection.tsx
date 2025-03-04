@@ -7,8 +7,9 @@ import scssvariables from '@/app/styles/_variables.module.scss';
 import recipesList, { recipesType } from '@/app/assets/recipesList';
 import RecipeCard from '../RecipeCard/RecipeCard';
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
-const TabItem = styled.button`
+const TabItem = styled(motion.button)`
    height: 38px;
    padding: 0 24px;
    border-radius: 24px;
@@ -33,7 +34,10 @@ export default function RecipesSection() {
    }
 
    return (
-      <section className={styles.RecipesSection}>
+      <motion.section 
+         className={styles.RecipesSection}
+         initial={{translateX: 500}} whileInView={{translateX: 0}} viewport={{once: true}} transition={{duration: 0.3}}
+      >
          <div className={styles.RecipesTextWrapper}>
             <div className={styles.RecipesTextWrapperTag}>
                Recipes
@@ -48,7 +52,9 @@ export default function RecipesSection() {
          <div className={styles.RecipesTabWrapper}>
             {
                recipesType.map((el) => 
-                  <TabItem
+                  <TabItem 
+                     whileTap={{scale: 0.9}} 
+                     whileHover={{scale: 1.1}}
                      key={el.id} 
                      onClick={() => {handleClick(el.mealTypeAction); setColor(el.mealTypeAction)}}
                      style={{
@@ -77,6 +83,6 @@ export default function RecipesSection() {
                />
             )}
          </div>
-      </section>
+      </motion.section>
    )
 }

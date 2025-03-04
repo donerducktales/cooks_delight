@@ -33,7 +33,7 @@ export default function SearchButton() {
                   />
                </form>
          }
-         <div className={`bg-dark bg-opacity-10 ${toggle ? 'rounded-e-2xl' : 'rounded-2xl'}`}>
+         <div className={`bg-dark bg-opacity-10 ${toggle ? 'rounded-e-2xl' : 'rounded-2xl'} ${'searchButtonToggle'}`}>
             <button  
                className={`w-9 h-9 flex justify-center items-center ${toggle ? 'bg-primaryRed rounded-2xl' : 'bg-dark rounded-2xl' } ${!toggle && 'bg-opacity-10'} ${'searchButtonSwitch'}`}
                onClick={() => setToggle(!toggle)}

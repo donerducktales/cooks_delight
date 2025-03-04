@@ -3,12 +3,16 @@
 import { montserrat } from '@/app/assets/fonts';
 import styles from './Ctasubcscribesec.module.scss';
 import useViewPortSize from '@/app/assets/customHooks/useViewPortSize';
+import { motion } from 'motion/react';
 
 export default function CTAsubscribeSection() {
    const windowSize = useViewPortSize();
 
    return (
-      <section className={styles.CtaSubscribeSection}>
+      <motion.section 
+         className={styles.CtaSubscribeSection}
+         initial={{scale: 0.5}} whileInView={{scale: 1}} viewport={{once: true}} transition={{duration: 0.3}}
+      >
          <div className={styles.CtaSubscribeSectionContainer}>
             <div className={styles.CtaSubscribeTextWrapper}>
                <h2>subscribe</h2>
@@ -21,6 +25,6 @@ export default function CTAsubscribeSection() {
             </div> 
             {windowSize.width < 768 && <button className={styles.subscribeButton}>Subscribe</button>}
          </div>
-      </section>
+      </motion.section>
    )
 }
