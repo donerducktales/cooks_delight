@@ -42,7 +42,7 @@ const EssentialsSectionItem = styled.div`
 
 export default function EssentialSection() {
    return (
-      <div className={`rounded-3xl border border-solid border-dark border-opacity-25 w-full mt-16 pt-10 pb-10 pl-8 pr-8 flex flex-row items-center flex-wrap justify-center gap-9 ${'essentialSection'}`}>
+      <div className={`rounded-3xl border border-solid border-dark border-opacity-25 w-full mt-16 mb-4 pt-10 pb-10 pl-8 pr-8 flex flex-row items-center flex-wrap justify-center gap-9 ${'essentialSection'}`}>
          <EssentialsSectionItem className="essentialsSectionItem">
             <div className="itemImage">
                <Image 

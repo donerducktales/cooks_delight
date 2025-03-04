@@ -58,7 +58,7 @@
 
    a {
       cursor: pointer;
-      transition: transform 1s ease-in-out;
+      transition: transform 1s ease-in-out, color 1s ;
       text-decoration: none;
       text-transform: uppercase;
       font-size: 0.875rem;
@@ -70,6 +70,7 @@
 
    a:hover {
       transform: translateY(-1.5px);
+      color: $dark;
    }
 }
 

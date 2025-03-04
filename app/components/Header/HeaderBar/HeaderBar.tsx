@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import styles from '@/app/components/Header/HeaderBar/header-bar.module.scss';
-import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 import scssvariables from '@/app/styles/_variables.module.scss';
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import styled from 'styled-components';

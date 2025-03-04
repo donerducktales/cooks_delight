@@ -9,8 +9,9 @@ import Link from 'next/link';
 import { links } from '@/app/assets/navLinks';
 import { useState } from 'react';
 import SearchButtonMobile from '../../SearchButton/SearchButtonMobile';
+import { motion } from 'motion/react';
 
-const StyledMenuMobile = styled.div<{open: boolean}>`
+const StyledMenuMobile = styled(motion.div)<{open: boolean}>`
    display: none;
 
    @media (max-width: 1024px) {
@@ -113,7 +114,11 @@ export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: any
    const [toggleSearch, setToggleSearch] = useState<boolean>(false);
    
    return (
-      <StyledMenuMobile open={open} >
+      <StyledMenuMobile 
+         initial={{opacity: 0}} 
+         whileInView={{opacity: 100, transition: {duration: 0.5}}} 
+         open={open} 
+      >
          <nav className='mobile-nav'>
             <ul className={montserrat.className}>
                {links.map((link) => 
