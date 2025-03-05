@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { montserrat, roboto } from "./assets/fonts";
 import styles from "./page.module.scss";
-import FeaturedSection from "./components/FeaturedSection/FeaturedSection";
 import RecipesSection from "./components/RecipesSection/RecipesSection";
+import FetchFeaturedRecipes from "./components/FeaturedSection/FetchFeaturedRecipes";
 // import AboutUs from "./components/AboutUsSec(Home)/AboutUs";
 
 export default function Home() {
@@ -90,7 +90,7 @@ export default function Home() {
                   </div>
                </div>
             </section>
-            <FeaturedSection />
+            <FetchFeaturedRecipes />
             <RecipesSection />
             {/* <AboutUs /> */}
          </div>

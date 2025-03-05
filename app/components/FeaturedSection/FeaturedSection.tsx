@@ -6,11 +6,11 @@ import styles from '@/app/components/FeaturedSection/featured-section.module.scs
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { montserrat, roboto } from "@/app/assets/fonts";
-import recipesList from "@/app/assets/recipesList";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import { motion } from "motion/react";
+import { WithId } from "mongodb";
 
-export default function FeaturedSection() {
+export default function FeaturedSection({recipes}: {recipes: WithId<Document>[]}) {
    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
 
    useEffect(() => {
@@ -56,20 +56,19 @@ export default function FeaturedSection() {
             </div>
             <div className={`${styles.emblaViewport} embla__viewport`} ref={emblaRef}>
                <div className={`${styles.emblaContainer} embla__container`}>
-                  {recipesList.map((el) => 
-                     <div 
-                        key={el.id}
+                  {recipes?.map((el) => 
+                     <div
+                        key={el._id.toString()}
                         className={`${styles.emblaSlide} embla__slide`}
                      >
                         <RecipeCard
-                           imgSrc={el.imgSrc}
-                           imgAlt={el.alt}
+                           imgSrc={el.imgUrl}
+                           imgAlt={el.title}
                            title={el.title}
                            description={el.description}
                            prepTime={el.prepTime}
                            difficulty={el.difficulty}
                            serving={el.serving}
-                           // maxWidthProp="632px"
                         />
                      </div>
                   )}

@@ -32,6 +32,7 @@ export default function RecipeCard({
             height={234}
             className={`w-full h-auto max-w-[632px]`}
             priority
+            unoptimized={true}
          />
          {/* </div> */}
          <div className={`${styles.recipeCardDescription}`}>
