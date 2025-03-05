@@ -35,7 +35,7 @@ export default async function FetchFeaturedRecipes() {
       }
    }
    
-   const data = await getRecipes();
+   const data = await getRecipes() as WithId<Recipe>[];
    const parsedData = JSON.parse(JSON.stringify(data))
    
    return (
