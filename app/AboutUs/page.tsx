@@ -6,6 +6,7 @@ import facebookLogoDark from '@/public/AboutUs/facebook-logo-dark.png';
 import instaLogoDark from '@/public/AboutUs/insta-logo-dark.png';
 import youtubeLogoDark from '@/public/AboutUs/yt-logo-dark.png';
 import { Metadata } from "next";
+import FetchFeaturedRecipes from "../components/FeaturedSection/FetchFeaturedRecipes";
 
 export const metadata: Metadata = {
    title: 'About Us'
@@ -154,7 +155,7 @@ export default function AboutUs() {
                </div>
             </div>
          </section>
-            <FeaturedSection />
+            <FetchFeaturedRecipes />
          </div>
       </main>
    )
