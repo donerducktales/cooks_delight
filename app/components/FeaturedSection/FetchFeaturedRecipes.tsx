@@ -1,6 +1,17 @@
 import FeaturedSection from "./FeaturedSection";
-import { WithId } from "mongodb";
+import { ObjectId, WithId } from "mongodb";
 import { client } from "@/lib/db";
+
+// interface Recipe {
+//    _id: ObjectId;
+//    imgUrl: string;
+//    title: string;
+//    description: string;
+//    prepTime: string;
+//    difficulty: string;
+//    serving: number;
+
+//  }
 
 export default async function FetchFeaturedRecipes() {
    async function getRecipes() {
@@ -25,7 +36,7 @@ export default async function FetchFeaturedRecipes() {
       }
    }
    
-   const data = await getRecipes() as WithId<Document>[];
+   const data = await getRecipes();
    const parsedData = JSON.parse(JSON.stringify(data))
    
    return (
