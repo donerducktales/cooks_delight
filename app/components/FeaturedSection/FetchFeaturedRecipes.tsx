@@ -2,16 +2,15 @@ import FeaturedSection from "./FeaturedSection";
 import { ObjectId, WithId } from "mongodb";
 import { client } from "@/lib/db";
 
-// interface Recipe {
-//    _id: ObjectId;
-//    imgUrl: string;
-//    title: string;
-//    description: string;
-//    prepTime: string;
-//    difficulty: string;
-//    serving: number;
-
-//  }
+interface Recipe {
+   _id: ObjectId;
+   imgUrl: string;
+   title: string;
+   description: string;
+   prepTime: string;
+   difficulty: string;
+   serving: number;
+}
 
 export default async function FetchFeaturedRecipes() {
    async function getRecipes() {
@@ -23,7 +22,7 @@ export default async function FetchFeaturedRecipes() {
          const finalData = await selectedDb
             .collection('recipeCard')
             .find()
-            .toArray()
+            .toArray() as WithId<Recipe>[]
    
          console.log('db connected and recipes received!!');
    
