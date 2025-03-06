@@ -5,7 +5,7 @@ import { useEffect, useCallback } from "react";
 import styles from '@/app/components/FeaturedSection/featured-section.module.scss';
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import { montserrat, roboto } from "@/app/assets/fonts";
+import { montserrat } from "@/app/assets/fonts";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import { motion } from "motion/react";
 import { ObjectId, WithId } from "mongodb";
