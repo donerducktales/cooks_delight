@@ -1,16 +1,20 @@
 import Image from "next/image";
 import { homemadeApple, montserrat, roboto } from "../assets/fonts";
-import FeaturedSection from "../components/FeaturedSection/FeaturedSection";
 import authorImage from '@/public/AboutUs/author-image.png';
 import facebookLogoDark from '@/public/AboutUs/facebook-logo-dark.png';
 import instaLogoDark from '@/public/AboutUs/insta-logo-dark.png';
 import youtubeLogoDark from '@/public/AboutUs/yt-logo-dark.png';
 import { Metadata } from "next";
-import FetchFeaturedRecipes from "../components/FeaturedSection/FetchFeaturedRecipes";
+import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
    title: 'About Us'
 }
+
+const DynamicFeaturedSectionNoSSR = dynamic(
+   () => import('@/app/components/FeaturedSection/FetchFeaturedRecipes'),
+   { ssr: false }
+);
 
 export default function AboutUs() {
    return (
@@ -155,7 +159,7 @@ export default function AboutUs() {
                </div>
             </div>
          </section>
-            <FetchFeaturedRecipes />
+            <DynamicFeaturedSectionNoSSR />
          </div>
       </main>
    )

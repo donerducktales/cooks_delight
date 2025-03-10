@@ -2,8 +2,13 @@ import Image from "next/image";
 import { montserrat, roboto } from "./assets/fonts";
 import styles from "./page.module.scss";
 import RecipesSection from "./components/RecipesSection/RecipesSection";
-import FetchFeaturedRecipes from "./components/FeaturedSection/FetchFeaturedRecipes";
+import dynamic from "next/dynamic";
 // import AboutUs from "./components/AboutUsSec(Home)/AboutUs";
+
+const DynamicFeaturedSectionNoSSR = dynamic(
+   () => import('@/app/components/FeaturedSection/FetchFeaturedRecipes'),
+   { ssr: false }
+);
 
 export default function Home() {
    return (
@@ -90,7 +95,7 @@ export default function Home() {
                   </div>
                </div>
             </section>
-            <FetchFeaturedRecipes />
+            <DynamicFeaturedSectionNoSSR />
             <RecipesSection />
             {/* <AboutUs /> */}
          </div>
