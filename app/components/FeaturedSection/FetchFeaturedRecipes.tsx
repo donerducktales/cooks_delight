@@ -30,8 +30,8 @@ export default async function FetchFeaturedRecipes() {
    
       } catch (error) {
          console.error(error);
-      } finally {
-         await client.close();
+         console.log('error above');
+         return [];
       }
    }
    
