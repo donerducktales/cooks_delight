@@ -4,6 +4,7 @@ import { roboto } from "./assets/fonts";
 import Footer from "./components/Footer/Footer";
 import CTAsubscribeSection from "./components/CTAsubscribeSection/CTAsubscribeSection";
 import Header from "./components/Header/Header";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
    title: "Home",
@@ -20,6 +21,7 @@ export default function RootLayout({
          <body className={`bg-background ${roboto.className}`}>
             <Header />
             {children}
+            <Analytics />
             <CTAsubscribeSection />
             <Footer />
          </body>
