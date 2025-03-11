@@ -21,6 +21,7 @@ const StyledMenuMobile = styled(motion.div)<{open: boolean}>`
       width: 100%;
       height: 100vh;
       padding-bottom: 20px;
+      overflow-y: scroll;
 
       .mobile-nav {
          width: 100%;
@@ -32,6 +33,7 @@ const StyledMenuMobile = styled(motion.div)<{open: boolean}>`
          border-radius: 0 0 24px 24px;
          display: flex;
          flex-direction: column;
+         overflow-y: scroll;
 
          ul {
             display: flex;

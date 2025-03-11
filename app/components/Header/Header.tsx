@@ -11,11 +11,12 @@ const HeaderStyled = styled.header<{open: boolean}>`
    flex-direction: column;
    align-items: center;
    width: 100%;
+   height: 100%;
    position: ${({open}) => open && 'fixed'};
    z-index: 9;
 
    @media (max-width: 1024px) {
-      overflow-x: scroll;
+      overflow-y: scroll;
    }
 `;
 
