@@ -8,7 +8,7 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
-   title: 'About Us'
+   title: 'About Us',
 }
 
 const DynamicFeaturedSectionNoSSR = dynamic(
@@ -75,7 +75,7 @@ export default function AboutUs() {
                </div>
             </div>
             <div className={`w-full flex flex-col items-center justify-center ${'galleryWrapper'}`}>
-               <div className={`w-full grid min-[1326px]:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 [&>div]:flex [&>div]:justify-center`}>
+               <div className={`w-full grid min-[1326px]:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 [&>div]:flex [&>div]:justify-center ${'galleryWrapperContainer'}`}>
                   <div>
                      <Image 
                         src={`/AboutUs/gallery-wrapper-img1.png`}
