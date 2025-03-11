@@ -3,6 +3,7 @@ import { montserrat, roboto } from "./assets/fonts";
 import styles from "./page.module.scss";
 import RecipesSection from "./components/RecipesSection/RecipesSection";
 import dynamic from "next/dynamic";
+import FetchRecipesSection from "./components/RecipesSection/FetchRecipesSection";
 // import AboutUs from "./components/AboutUsSec(Home)/AboutUs";
 
 const DynamicFeaturedSectionNoSSR = dynamic(
@@ -96,7 +97,7 @@ export default function Home() {
                </div>
             </section>
             <DynamicFeaturedSectionNoSSR />
-            <RecipesSection />
+            <FetchRecipesSection />
             {/* <AboutUs /> */}
          </div>
       </main>

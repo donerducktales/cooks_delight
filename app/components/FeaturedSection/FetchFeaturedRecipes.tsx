@@ -1,40 +1,8 @@
 import FeaturedSection from "./FeaturedSection";
-import { ObjectId, WithId } from "mongodb";
-import { client } from "@/lib/db";
-
-interface Recipe {
-   _id: ObjectId;
-   imgUrl: string;
-   title: string;
-   description: string;
-   prepTime: string;
-   difficulty: string;
-   serving: number;
-}
+import { WithId } from "mongodb";
+import { getRecipes, Recipe } from "@/app/api/actions/actions";
 
 export default async function FetchFeaturedRecipes() {
-   async function getRecipes() {
-      'use server'
-      
-      try {
-         const mongoClient = await client.connect();
-         const selectedDb = mongoClient.db('recipes');
-         const finalData = await selectedDb
-            .collection('recipeCard')
-            .find()
-            .toArray() as WithId<Recipe>[]
-   
-         console.log('db connected and recipes received!!');
-   
-         return finalData;
-   
-      } catch (error) {
-         console.error(error);
-         console.log('error above');
-         return [];
-      }
-   }
-   
    const data = await getRecipes() as WithId<Recipe>[];
    const parsedData = JSON.parse(JSON.stringify(data))
    

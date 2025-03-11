@@ -4,10 +4,12 @@ import { montserrat } from '@/app/assets/fonts';
 import styles from './recipes-section.module.scss';
 import styled from 'styled-components';
 import scssvariables from '@/app/styles/_variables.module.scss';
-import recipesList, { recipesType } from '@/app/assets/recipesList';
+import { recipesType } from '@/app/assets/recipesList';
 import RecipeCard from '../RecipeCard/RecipeCard';
 import { useState } from 'react';
 import { motion } from 'motion/react';
+import { WithId } from 'mongodb';
+import { RecipeWithDishType } from './FetchRecipesSection';
 
 const TabItem = styled(motion.button)`
    height: 38px;
@@ -24,12 +26,12 @@ const TabItem = styled(motion.button)`
    cursor: pointer;
 `;
 
-export default function RecipesSection() {
-   const [filteredRecipes, setFilteredRecipes] = useState(recipesList);
+export default function RecipesSection({recipes}: {recipes: WithId<RecipeWithDishType>[]}) {
+   const [filteredRecipes, setFilteredRecipes] = useState(recipes);
    const [color, setColor] = useState<string>('');
 
    const handleClick = (recipeType: string) => {
-      const filtered = recipesList.filter(el => el.type.includes(recipeType));
+      const filtered = recipes.filter(el => el.type.includes(recipeType));
       setFilteredRecipes(filtered);
    }
 
@@ -71,9 +73,9 @@ export default function RecipesSection() {
          <div className={styles.RecipesCardWrapper}>
             {filteredRecipes.map(el =>
                <RecipeCard 
-                  key={el.id}
-                  imgSrc={el.imgSrc}
-                  imgAlt={el.alt}
+                  key={el._id.toString()}
+                  imgSrc={el.imgUrl}
+                  imgAlt={el.title}
                   title={el.title}
                   description={el.description}
                   prepTime={el.prepTime}

@@ -8,17 +8,8 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { montserrat } from "@/app/assets/fonts";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import { motion } from "motion/react";
-import { ObjectId, WithId } from "mongodb";
-
-interface Recipe {
-   _id: ObjectId;
-   imgUrl: string;
-   title: string;
-   description: string;
-   prepTime: string;
-   difficulty: string;
-   serving: string;
-}
+import { WithId } from "mongodb";
+import { Recipe } from "@/app/api/actions/actions";
 
 export default function FeaturedSection({recipes}: {recipes: WithId<Recipe>[]}) {
    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
