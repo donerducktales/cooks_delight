@@ -38,7 +38,7 @@ export default function RecipesSection({recipes}: {recipes: WithId<RecipeWithDis
    return (
       <motion.section 
          className={styles.RecipesSection}
-         initial={{translateX: 500}} whileInView={{translateX: 0}} viewport={{once: true}} transition={{duration: 0.3}}
+         initial={{translateX: 150}} whileInView={{translateX: 0}} viewport={{once: true}} transition={{duration: 0.5}}
       >
          <div className={styles.RecipesTextWrapper}>
             <div className={styles.RecipesTextWrapperTag}>

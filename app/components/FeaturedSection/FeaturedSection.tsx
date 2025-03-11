@@ -30,7 +30,7 @@ export default function FeaturedSection({recipes}: {recipes: WithId<Recipe>[]}) 
 
    return (
       <motion.section 
-         initial={{translateX: -500}} whileInView={{translateX: 0}} viewport={{once: true}} transition={{duration: 0.3}}
+         initial={{translateX: -150}} whileInView={{translateX: 0}} viewport={{once: true}} transition={{duration: 0.5}}
          className={`${styles.featuredSection}`}
       >
          <div className={`${styles.embla} embla`}>
