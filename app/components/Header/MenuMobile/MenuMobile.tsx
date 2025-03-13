@@ -17,7 +17,6 @@ const StyledMenuMobile = styled(motion.div)<{open: boolean}>`
    @media (max-width: 1024px) {
       background-color: ${scssvariables.dark};
       display: flex;
-      transform: translateY(-17px);
       width: 100%;
       height: 100vh;
       padding-bottom: 20px;

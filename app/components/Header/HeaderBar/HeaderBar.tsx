@@ -38,7 +38,10 @@ export default function HeaderBar({open, setOpen}: {open: boolean, setOpen: any}
    return (
       <header
          className={styles.header} 
-         style={toDark(scssvariables.dark)}
+         style={{
+            backgroundColor: open ? scssvariables.dark : '',
+            paddingBottom: open ? '0' : '16px'
+         }}
       >
          <HeaderContainer 
             open={open}
