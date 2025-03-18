@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { montserrat } from "../assets/fonts";
 import EssentialSection from "../components/EssentialSection/EssentialSection";
-import ExploreSection from "../components/ExploreSection/ExploreSection";
+import CookingBasicsSSR from "../components/CookingBasicsSection/CookingTechniquesSSR";
 
 export const metadata: Metadata = {
    title: 'Cooking Tips'
@@ -21,7 +21,7 @@ export default function CookingTips() {
                   </p>
                </div>
                <EssentialSection />
-               <ExploreSection />
+               <CookingBasicsSSR />
             </section>
          </div>
       </main>

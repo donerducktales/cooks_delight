@@ -11,14 +11,24 @@ export interface Recipe {
    serving: string;
 }
 
-export async function getRecipes() {
+export interface CookingTips {
+   _id: ObjectId;
+   imgUrl: string;
+   title: string;
+   description: string;
+   readTime: string;
+   date: string;
+}
+
+export async function getData(dbName: string, collName: string) {
    try {
       const mongoClient = await client.connect();
-      const selectedDb = mongoClient.db('recipes');
+      const selectedDb = mongoClient.db(dbName);
       const finalData = await selectedDb
-         .collection('recipeCard')
+         .collection(collName)
          .find()
-         .toArray() as WithId<Recipe>[]
+         .toArray()
+         // .toArray() as WithId<Recipe>[]
 
       console.log('db connected and recipes received!!');
 
@@ -30,3 +40,25 @@ export async function getRecipes() {
       return [];
    }
 }
+
+// export async function searchRecipeByParam(searchParam: string) {
+//    try {
+//       const mongoClient = await client.connect();
+//       const selectedDb = mongoClient.db('recipes');
+//       const finalData = await selectedDb
+//          .collection('recipeCard')
+//          .find({
+//             $or: [
+//                { title: { $regex: searchParam, $options: 'i' } },
+//                { type: { $regex: searchParam, $options: 'i' } },
+//             ],
+//          })
+//          .toArray()
+
+//       return finalData;
+//    } catch (error) {
+//       console.error(error);
+//       console.log('error above');
+//       return [];
+//    }
+// }
