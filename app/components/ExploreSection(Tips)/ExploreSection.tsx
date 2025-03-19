@@ -65,7 +65,7 @@ export default function ExploreSection({card}: {card: WithId<CookingTips>[]}) {
                         <div 
                            className={`min-h-[464px] rounded-3xl w-full h-full flex flex-col justify-end ${'exploreSectionCard'}`}
                            style={{
-                              background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(38,37,34,0.8) 64%)',
+                              background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(38,37,34,0.8) 64%)',
                            }}
                         >
                            <div className={`flex flex-col mx-6 ${'exploreCardTextWrapper'}`}>
