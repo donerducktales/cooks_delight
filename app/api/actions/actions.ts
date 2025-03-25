@@ -1,5 +1,5 @@
 import { client } from "@/lib/db";
-import { ObjectId, WithId } from "mongodb";
+import { ObjectId } from "mongodb";
 
 export interface Recipe {
    _id: ObjectId;
@@ -40,25 +40,3 @@ export async function getData(dbName: string, collName: string) {
       return [];
    }
 }
-
-// export async function searchRecipeByParam(searchParam: string) {
-//    try {
-//       const mongoClient = await client.connect();
-//       const selectedDb = mongoClient.db('recipes');
-//       const finalData = await selectedDb
-//          .collection('recipeCard')
-//          .find({
-//             $or: [
-//                { title: { $regex: searchParam, $options: 'i' } },
-//                { type: { $regex: searchParam, $options: 'i' } },
-//             ],
-//          })
-//          .toArray()
-
-//       return finalData;
-//    } catch (error) {
-//       console.error(error);
-//       console.log('error above');
-//       return [];
-//    }
-// }

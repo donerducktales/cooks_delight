@@ -145,7 +145,7 @@ export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: any
                   Subscribe
                </button>
             </div>
-            {toggleSearch && <SearchButtonMobile />}
+            {toggleSearch && <SearchButtonMobile setOpen={setOpen} />}
             <div className='social-media-links'>
                <Image 
                   src={'/Header/facebook-logo.png'}
