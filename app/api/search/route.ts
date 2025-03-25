@@ -18,17 +18,15 @@ export async function GET(request: Request) {
 
       console.log('found by input successful')
 
-      if (data) {
-         data.map((el) => ({
+      if (data && data.length > 0) {
+         const transformedData = data.map((el) => ({
             ...el,
             _id: el._id.toString(),
          }));
+         return new Response(JSON.stringify(transformedData));
       } else {
-         return []; 
+         return new Response(JSON.stringify([]));
       }
-
-      return new Response(JSON.stringify(data))
-
    } catch (error) {
       alert(error)
    }
