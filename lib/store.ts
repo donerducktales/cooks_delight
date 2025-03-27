@@ -1,13 +1,32 @@
-import { configureStore } from "@reduxjs/toolkit"
+import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import searchSlice from "./features/searchSlice";
+import storage from 'redux-persist/lib/storage/session';
+import { persistReducer, persistStore } from 'redux-persist';
+
+const rootReducer = combineReducers({
+   search: searchSlice,
+});
+
+const persistConfig = {
+   key: 'root',
+   storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = configureStore({
+   reducer: persistedReducer,
+   middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+         serializableCheck: false,
+   }),
+});
 
 export const makeStore = () => {
-   return configureStore({
-      reducer: {
-         search: searchSlice
-      },
-   });
+   return store
 }
+
+export const persistor = persistStore(store);
 
 // Infer the type of makeStore
 export type AppStore = ReturnType<typeof makeStore>;
