@@ -1,7 +1,7 @@
 'use client'
 
 import useViewPortSize from "@/app/assets/customHooks/useViewPortSize";
-import { fetchResults, setSearchValue } from "@/lib/features/searchSlice";
+import { fetchResults, setSearchValue, setValueRequest } from "@/lib/features/searchSlice";
 import { AppDispatch, RootState } from "@/lib/store";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/16/solid";
 import { useRouter } from "next/navigation";
@@ -26,6 +26,7 @@ export default function SearchButton() {
 
       try {
          dispatch(fetchResults(value))
+         dispatch(setValueRequest())
          router.push('/searchResult');
       } catch (error) {
          alert(`${error}`)

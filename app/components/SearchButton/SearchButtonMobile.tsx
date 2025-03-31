@@ -1,6 +1,6 @@
 'use client'
 
-import { fetchResults, setSearchValue } from "@/lib/features/searchSlice";
+import { fetchResults, setSearchValue, setValueRequest } from "@/lib/features/searchSlice";
 import { AppDispatch, RootState } from "@/lib/store";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { useRouter } from "next/navigation";
@@ -17,6 +17,7 @@ export default function SearchButtonMobile({setOpen}: {setOpen: any}) {
       try {
          dispatch(fetchResults(value));
          router.push('/searchResult');
+         dispatch(setValueRequest())
          setOpen(false);
       } catch (error) {
          alert(`${error}`)

@@ -3,11 +3,13 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface SearchState {
    value: string;
    result: any[];
+   valueRequest: string
 }
 
 const initialState: SearchState = {
    value: '',
    result: [],
+   valueRequest: ''
 }
 
 export const fetchResults = createAsyncThunk(
@@ -26,6 +28,9 @@ export const searchSlice = createSlice({
       setSearchValue: (state, action: PayloadAction<string>) => {
          state.value = action.payload;
       },
+      setValueRequest: (state) => {
+         state.valueRequest = state.value;
+      },
    },
    extraReducers(builder) {
       builder
@@ -36,4 +41,4 @@ export const searchSlice = createSlice({
 })
 
 export default searchSlice.reducer;
-export const { setSearchValue } = searchSlice.actions;
+export const { setSearchValue, setValueRequest } = searchSlice.actions;
