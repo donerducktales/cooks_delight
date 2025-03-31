@@ -70,21 +70,29 @@ export default function RecipesSection({recipes}: {recipes: WithId<RecipeWithDis
                )
             }
          </div>
-         <div className={styles.RecipesCardWrapper}>
-            {filteredRecipes.map(el =>
-               <RecipeCard 
-                  key={el._id.toString()}
-                  imgSrc={el.imgUrl}
-                  imgAlt={el.title}
-                  title={el.title}
-                  description={el.description}
-                  prepTime={el.prepTime}
-                  difficulty={el.difficulty}
-                  serving={el.serving}
-                  // maxWidthProp='427px'
-               />
-            )}
-         </div>
+         {filteredRecipes.length === 0 ? 
+            <div className={`w-full sm:h-92 h-64 flex justify-center items-center ${'recipesCardEmpty'}`}>
+               <p className={`text-2xl uppercase ${montserrat.className}`}>
+                  No recipes
+               </p>
+            </div>
+            :
+            <div className={styles.RecipesCardWrapper}>
+               {filteredRecipes.map(el =>
+                  <RecipeCard 
+                     key={el._id.toString()}
+                     imgSrc={el.imgUrl}
+                     imgAlt={el.title}
+                     title={el.title}
+                     description={el.description}
+                     prepTime={el.prepTime}
+                     difficulty={el.difficulty}
+                     serving={el.serving}
+                     // maxWidthProp='427px'
+                  />
+               )}
+            </div>
+         }
       </motion.section>
    )
 }
