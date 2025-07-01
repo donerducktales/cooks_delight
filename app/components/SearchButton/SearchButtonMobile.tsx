@@ -1,23 +1,20 @@
 'use client'
 
-import { fetchResults, setSearchValue, setValueRequest } from "@/lib/features/searchSlice";
-import { AppDispatch, RootState } from "@/lib/store";
+import useSearchStore from "@/lib/features/states/searchStore";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { useRouter } from "next/navigation";
-import { useDispatch, useSelector } from "react-redux";
 
-export default function SearchButtonMobile({setOpen}: {setOpen: any}) {
-   const dispatch: AppDispatch = useDispatch();
-   const value = useSelector((state: RootState) => state.search.value);
+export default function SearchButtonMobile({ setOpen }: { setOpen: (open: boolean) => void }) {
+   const { value, fetchResults, setValueRequest, setSearchValue } = useSearchStore();
    const router = useRouter();
 
-   async function handleSubmit(e: any) {
+   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       e.preventDefault()
 
       try {
-         dispatch(fetchResults(value));
+         fetchResults(value);
          router.push('/searchResult');
-         dispatch(setValueRequest())
+         setValueRequest();
          setOpen(false);
       } catch (error) {
          alert(`${error}`)
@@ -32,7 +29,7 @@ export default function SearchButtonMobile({setOpen}: {setOpen: any}) {
          <input 
             type="text" 
             className={`w-full outline-none bg-background bg-opacity-10 text-light h-9 mr-4 pl-2 pr-2 rounded-2xl`}
-            onChange={(e) => dispatch(setSearchValue(e.target.value))}
+            onChange={(e) => setSearchValue(e.target.value)}
          />
          <button
             type="submit"

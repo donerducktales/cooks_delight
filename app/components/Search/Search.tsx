@@ -1,15 +1,13 @@
 'use client'
 
 import { montserrat } from "@/app/assets/fonts";
-import { RootState } from "@/lib/store"
-import { useSelector } from "react-redux"
 import RecipeCard from "../RecipeCard/RecipeCard";
 import { useEffect, useState } from "react";
+import useSearchStore from "@/lib/features/states/searchStore";
 
 export default function Search() {
-   const result = useSelector((state: RootState) => state.search.result);
-   const valueRequest = useSelector((state: RootState) => state.search.valueRequest);
    const [loading, setLoading] = useState(true);
+   const { result, valueRequest } = useSearchStore();
 
    useEffect(() => {
       setTimeout(() => {

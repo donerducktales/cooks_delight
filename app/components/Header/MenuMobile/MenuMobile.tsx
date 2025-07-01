@@ -111,7 +111,7 @@ const StyledMenuMobile = styled(motion.div)<{open: boolean}>`
    }
 `;
 
-export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: any}) {
+export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: (open: boolean) => void}) {
    const [toggleSearch, setToggleSearch] = useState<boolean>(false);
    
    return (
