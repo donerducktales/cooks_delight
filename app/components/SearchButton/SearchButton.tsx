@@ -1,18 +1,15 @@
 'use client'
 
 import useViewPortSize from "@/app/assets/customHooks/useViewPortSize";
-import { fetchResults, setSearchValue, setValueRequest } from "@/lib/features/searchSlice";
-import { AppDispatch, RootState } from "@/lib/store";
+import useSearchStore from "@/lib/features/states/searchStore";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/16/solid";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 export default function SearchButton() {
    const [toggle, setToggle] = useState<boolean>(false);
    const windowSize = useViewPortSize();
-   const dispatch: AppDispatch = useDispatch();
-   const value = useSelector((state: RootState) => state.search.value);
+   const { value, fetchResults, setValueRequest, setSearchValue } = useSearchStore();
    const router = useRouter();
 
    useEffect(() => {
@@ -21,12 +18,12 @@ export default function SearchButton() {
       }
    });
 
-   async function handleSubmit(e: any) {
+   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       e.preventDefault()
 
       try {
-         dispatch(fetchResults(value))
-         dispatch(setValueRequest())
+         fetchResults(value);
+         setValueRequest();
          router.push('/searchResult');
       } catch (error) {
          alert(`${error}`)
@@ -50,7 +47,7 @@ export default function SearchButton() {
                   <input 
                      type="text" 
                      className={`max-w-32 h-9 outline-none rounded-s-2xl pr-2 ml-2 bg-dark bg-opacity-0`}
-                     onChange={(e) => dispatch(setSearchValue(e.target.value))}
+                     onChange={(e) => setSearchValue(e.target.value)}
                   />
                </form>
          }
