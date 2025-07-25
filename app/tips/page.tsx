@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { montserrat } from "../assets/fonts";
-import EssentialSection from "../components/EssentialSection/EssentialSection";
+import EssentialSection from "../layouts/EssentialSection/EssentialSection";
 import CookingBasicsSSR from "../components/CookingBasicsSection/CookingTechniquesSSR";
 import ExploreSectionSSR from "../components/ExploreSection(Tips)/ExploreSectionSSR";
 

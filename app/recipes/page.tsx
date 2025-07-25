@@ -1,5 +1,5 @@
 import FetchRecipesSection from "../components/RecipesSection/FetchRecipesSection";
-import TipsAnnotationSection from "../components/TipsAnnotationSection/TipsAnnotationSection";
+import TipsAnnotationSection from "../layouts/TipsAnnotationSection/TipsAnnotationSection";
 
 export default function RecipesPage() {
    return (
