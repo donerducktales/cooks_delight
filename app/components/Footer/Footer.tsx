@@ -24,7 +24,9 @@ export default function Footer() {
             />
             <p className="w-[50px] text-sm">Cooks Delight</p>
           </div>
-          <ul className={`footerNavLinks flex max-md:flex-col max-md:w-full max-md:justify-start md:divide-x-2 divide-y-2 md:gap-4 gap-2`}>
+          <ul
+            className={`footerNavLinks flex max-md:flex-col max-md:w-full max-md:justify-start md:divide-x-2 max-md:divide-y-2 md:gap-4 gap-2`}
+          >
             {links.map((link) => (
               <li
                 key={link.id}
