@@ -1,4 +1,5 @@
-import { montserrat, roboto } from "../assets/fonts";
+import { montserrat, roboto } from "@/app/assets/fonts";
+
 
 export default function HeroSection() {
    return (
