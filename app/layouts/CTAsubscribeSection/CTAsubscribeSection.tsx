@@ -39,8 +39,8 @@ export default function CTAsubscribeSection() {
   return (
     <motion.section
       className={`CtaSubscribeSection w-full bg-background flex flex-col items-center`}
-      initial={{ scale: 0.5 }}
-      whileInView={{ scale: 1 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3 }}
     >
