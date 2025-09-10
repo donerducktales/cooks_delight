@@ -24,7 +24,6 @@ const StyledMenuMobile = styled(motion.div)<{open: boolean}>`
 
       .mobile-nav {
          width: 100%;
-         height: 462px;
          margin: 0 16px;
          padding: 0 16px;
          background-color: rgba(255, 251, 242, 0.05);
@@ -100,6 +99,7 @@ const StyledMenuMobile = styled(motion.div)<{open: boolean}>`
          align-items: center;
          justify-content: center;
          margin-top: 20px;
+         margin-bottom: 24px;
          gap: 16px;
          cursor: pointer;
 
@@ -145,7 +145,7 @@ export default function MenuMobile({open, setOpen}: {open: boolean, setOpen: (op
                   Subscribe
                </button>
             </div>
-            {toggleSearch && <SearchButtonMobile setOpen={setOpen} />}
+            {toggleSearch && <SearchButtonMobile setOpen={setOpen} open={open} />}
             <div className='social-media-links'>
                <Image 
                   src={'/Header/facebook-logo.png'}
