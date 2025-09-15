@@ -5,7 +5,8 @@ import useSearchStore from "@/lib/features/states/searchStore";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/16/solid";
 import { ObjectId, WithId } from "mongodb";
 import { useRouter } from "next/navigation";
-import { Dispatch, useEffect, useState } from "react";
+import { Dispatch, useContext, useEffect, useState } from "react";
+import { DataContext } from "../Header/recipesDataContext";
 
 interface ResultsButtonType {
   _id: ObjectId;
@@ -63,7 +64,10 @@ const ToggleButton = ({
         className={`w-9 h-9 flex justify-center items-center ${
           toggle ? "bg-primaryRed rounded-2xl" : "bg-dark rounded-2xl"
         } ${!toggle && "bg-opacity-10"} ${"searchButtonSwitch"}`}
-        onClick={() => {setToggle(!toggle); setResult([])}}
+        onClick={() => {
+          setToggle(!toggle);
+          setResult([]);
+        }}
       >
         {toggle ? (
           <XMarkIcon className="w-6 h-6 text-background" />
@@ -107,6 +111,7 @@ const ResultsButton = ({
 export default function SearchButton() {
   const [toggle, setToggle] = useState<boolean>(false);
   const [result, setResult] = useState<WithId<ResultsButtonType>[]>([]);
+  const { dbData } = useContext(DataContext);
   const router = useRouter();
   const windowSize = useViewPortSize();
   const { value, fetchResults, setValueRequest, setSearchValue } =
@@ -116,7 +121,7 @@ export default function SearchButton() {
     if (windowSize.width < 1024) {
       setToggle(false);
     }
-  });
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -145,28 +150,22 @@ export default function SearchButton() {
     }
   }
 
-  async function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const newSearchValue = e.target.value;
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const newSearchValue = e.target.value.trim().toLowerCase();
     setSearchValue(newSearchValue);
 
-    if (!newSearchValue.trim()) {
+    if (!newSearchValue) {
       setResult([]);
       return;
     }
 
-    try {
-      const response = await fetch(`/api/search?searchValue=${newSearchValue}`);
+    const filteredData = dbData.filter(
+      (el) =>
+        el.title.toLowerCase().includes(newSearchValue) ||
+        el.type.toLowerCase().includes(newSearchValue)
+    );
 
-      if (response.ok) {
-        const data = await response.json();
-        setResult(data);
-      } else {
-        setResult([]);
-      }
-    } catch (error) {
-      console.error("error while fetching", error);
-      setResult([]);
-    }
+    setResult(filteredData);
   }
 
   return (
@@ -179,9 +178,17 @@ export default function SearchButton() {
           handleSubmit={handleSubmit}
           handleChange={handleChange}
         />
-        <ToggleButton toggle={toggle} setToggle={setToggle} setResult={setResult} />
+        <ToggleButton
+          toggle={toggle}
+          setToggle={setToggle}
+          setResult={setResult}
+        />
       </div>
-      <ResultsButton result={result} toggle={toggle} handleClick={handleClick} />
+      <ResultsButton
+        result={result}
+        toggle={toggle}
+        handleClick={handleClick}
+      />
     </div>
   );
 }
