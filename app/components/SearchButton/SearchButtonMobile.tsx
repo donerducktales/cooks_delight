@@ -4,7 +4,8 @@ import useSearchStore from "@/lib/features/states/searchStore";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { ObjectId, WithId } from "mongodb";
 import { useRouter } from "next/navigation";
-import { Dispatch, useState } from "react";
+import { Dispatch, useContext, useState } from "react";
+import { DataContext } from "../Header/recipesDataContext";
 
 interface ResultsButtonType {
   _id: ObjectId;
@@ -79,6 +80,7 @@ export default function SearchButtonMobile({
     useSearchStore();
   const router = useRouter();
   const [result, setResult] = useState<WithId<ResultsButtonType>[]>([]);
+  const { dbData } = useContext(DataContext);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -94,27 +96,21 @@ export default function SearchButtonMobile({
   }
 
   async function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const newSearchValue = e.target.value;
+    const newSearchValue = e.target.value.trim().toLowerCase();
     setSearchValue(newSearchValue);
 
-    if (!newSearchValue.trim()) {
+    if (!newSearchValue) {
       setResult([]);
       return;
     }
 
-    try {
-      const response = await fetch(`/api/search?searchValue=${newSearchValue}`);
+    const filteredData = dbData.filter(
+      (el) =>
+        el.title.toLowerCase().includes(newSearchValue) ||
+        el.type.toLowerCase().includes(newSearchValue)
+    );
 
-      if (response.ok) {
-        const data = await response.json();
-        setResult(data);
-      } else {
-        setResult([]);
-      }
-    } catch (error) {
-      console.error("error while fetching", error);
-      setResult([]);
-    }
+    setResult(filteredData);
   }
 
   function handleClick(title: string) {

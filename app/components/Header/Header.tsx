@@ -1,39 +1,42 @@
-'use client'
+"use client";
 
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import HeaderBar from "./HeaderBar/HeaderBar";
 import MenuMobile from "./MenuMobile/MenuMobile";
 import useViewPortSize from "@/app/assets/customHooks/useViewPortSize";
+import { RecipesDataProvider } from "./recipesDataContext";
 
-const HeaderStyled = styled.header<{open: boolean}>`
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   width: 100%;
-   height: 100%;
-   position: ${({open}) => open && 'fixed'};
-   z-index: 9;
+const HeaderStyled = styled.header<{ open: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: ${({ open }) => open && "fixed"};
+  z-index: 9;
 
-   @media (max-width: 1024px) {
-      overflow-y: scroll;
-   }
+  @media (max-width: 1024px) {
+    overflow-y: scroll;
+  }
 `;
 
 export default function Header() {
-   const [open, setOpen] = useState<boolean>(false);
-   const windowSize = useViewPortSize();
+  const [open, setOpen] = useState<boolean>(false);
+  const windowSize = useViewPortSize();
 
-   useEffect (() => {
-      if (windowSize.width > 1024) {
-         setOpen(false);
-      }
-   });
+  useEffect(() => {
+    if (windowSize.width > 1024) {
+      setOpen(false);
+    }
+  });
 
-   return (
-      <HeaderStyled open={open}>
-         <HeaderBar open={open} setOpen={setOpen}/>
-         {open && <MenuMobile open={open} setOpen={setOpen} />}
-      </HeaderStyled>
-   )
+  return (
+    <HeaderStyled open={open}>
+      <RecipesDataProvider>
+        <HeaderBar open={open} setOpen={setOpen} />
+        {open && <MenuMobile open={open} setOpen={setOpen} />}
+      </RecipesDataProvider>
+    </HeaderStyled>
+  );
 }
