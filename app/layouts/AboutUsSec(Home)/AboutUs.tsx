@@ -1,11 +1,14 @@
+"use client"
+
 import { montserrat, roboto } from "@/app/assets/fonts";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 const TextAndImage = () => {
   return (
     <div className="textAndImage flex flex-col gap-4 sm:flex-row sm:justify-between">
       <div
-        className={`textWrapper flex flex-col items-start p-2 ${roboto.className} sm:w-1/2 lg:w-[48%]`}
+        className={`textWrapper flex flex-col items-start p-2 sm:mt-8 ${roboto.className} sm:w-1/2 lg:w-[48%]`}
       >
         <div className="aboutUsMarking mb-2 flex h-6 w-[83px] items-center justify-center rounded-xl bg-primaryRed">
           <p className="text-sm font-medium uppercase text-background">
@@ -32,8 +35,8 @@ const TextAndImage = () => {
           alt="grill"
           width={327}
           height={326}
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 30vw"
           className="h-auto max-sm:h-[327px] w-full rounded-2xl object-cover"
+          unoptimized={true}
         />
       </div>
     </div>
@@ -42,7 +45,12 @@ const TextAndImage = () => {
 
 export default function AboutUs() {
   return (
-    <section className="aboutUsSection mx-auto mb-16 max-w-[1313px] rounded-3xl border border-solid border-dark border-opacity-25 bg-background p-4">
+    <motion.section 
+      className="aboutUsSection mx-auto mb-16 max-w-[1313px] rounded-3xl border border-solid border-dark border-opacity-25 bg-background p-4"
+      initial={{opacity: 0}}
+      whileInView={{opacity: 1}}
+      transition={{duration: 0.7}}
+    >
       <div className="aboutUsSectionWrapper flex flex-col gap-4 lg:flex-row">
         <div className="leftColumn flex w-full flex-col gap-4 lg:w-2/3">
           <TextAndImage />
@@ -52,6 +60,7 @@ export default function AboutUs() {
               alt="veg"
               width={861}
               height={331}
+              unoptimized={true}
               className="h-auto w-full rounded-2xl object-cover max-sm:hidden"
             />
             <Image
@@ -59,6 +68,7 @@ export default function AboutUs() {
               alt="veggies mobile"
               width={324}
               height={327}
+              unoptimized={true}
               className="h-[324px] w-full rounded-2xl object-cover sm:hidden"
             />
           </div>
@@ -69,6 +79,7 @@ export default function AboutUs() {
             alt="cooks image"
             width={411}
             height={665}
+            unoptimized={true}
             className="h-full w-full rounded-2xl object-cover max-lg:hidden"
           />
           <Image
@@ -76,10 +87,11 @@ export default function AboutUs() {
             alt="cooks image"
             width={324}
             height={327}
+            unoptimized={true}
             className="h-[324px] w-full rounded-2xl object-cover lg:hidden"
           />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
