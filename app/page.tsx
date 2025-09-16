@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import FetchRecipesSection from "./components/RecipesSection/FetchRecipesSection";
 import HeroSection from "./layouts/HeroSection/HeroSection";
 import ExploreSectionLayout from "./layouts/ExploreSectionLayout/ExploreSectionLayout";
-// import AboutUs from "./components/AboutUsSec(Home)/AboutUs";
+import AboutUs from "./layouts/AboutUsSec(Home)/AboutUs";
 
 const DynamicFeaturedSectionNoSSR = dynamic(
    () => import('@/app/components/FeaturedSection/FetchFeaturedRecipes'),
@@ -17,7 +17,7 @@ export default function Home() {
             <ExploreSectionLayout />
             <DynamicFeaturedSectionNoSSR />
             <FetchRecipesSection />
-            {/* <AboutUs /> */}
+            <AboutUs />
          </div>
       </main>
    );
